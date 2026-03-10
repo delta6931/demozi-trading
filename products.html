@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demozi | Our Products</title>
+    <meta name="description"
+        content="Browse the Demozi product catalog. Find high-quality industrial machinery, automation components, sensors, and safety systems from top brands like Siemens, SICK, IFM, ABB, and Parker Meggitt.">
+    <meta name="keywords"
+        content="Demozi products, industrial catalog, SICK sensors, IFM automation, Siemens components, ABB, buy industrial equipment Iraq">
+    <meta property="og:title" content="Product Catalog | Demozi">
+    <meta property="og:description"
+        content="Browse thousands of industrial products, sensors, and automation systems from trusted global brands.">
+    <meta property="og:image" content="https://demozi.com/assets/logo_transparent.png">
+    <meta property="og:url" content="https://demozi.com/products.html">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo_transparent.png">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGZR1V6YV9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FGZR1V6YV9');
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo_transparent.png" alt="Demozi Logo" class="logo-img"
+                    style="height: 60px; margin-right: 10px;">
+                <div class="logo-text-container">
+                    <div class="logo-text">Demozi Company</div>
+                    <div class="logo-subtitle">General Trading Limited Liability Private Company</div>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html#about" class="nav-link" data-i18n="nav_about">About Us</a>
+                <div class="dropdown">
+                    <button class="nav-link dropbtn"><span data-i18n="nav_divisions">Our Divisions</span> <i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="index.html#industrial" data-i18n="nav_industrial">Industrial & Coding Systems</a>
+                        <a href="index.html#cosmetics" data-i18n="nav_cosmetics">Cosmetics & Beauty</a>
+                        <a href="index.html#logistics" data-i18n="nav_logistics">Export & Logistics</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropbtn"><span data-i18n="nav_trademarks">Trademarks</span> <i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="products.html?brand=sick">SICK</a>
+                        <a href="products.html?brand=ifm">IFM</a>
+                        <a href="products.html?brand=parker-meggitt">Parker Meggitt</a>
+                        <a href="products.html?brand=abb">ABB</a>
+                        <a href="products.html?brand=phoenix-contact">Phoenix Contact</a>
+                        <a href="products.html?brand=siemens">Siemens</a>
+                    </div>
+                </div>
+
+                <a href="brands.html" class="nav-link" data-i18n="nav_brands">Brands</a>
+                <a href="products.html" class="nav-link active" data-i18n="nav_products">Products</a>
+                <a href="index.html#contact" class="btn btn-primary" data-i18n="nav_contact">Contact Us</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="tr">TR</button>
+                    <button class="lang-btn" data-lang="ar">AR</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="section-padding" style="margin-top: 100px; min-height: calc(100vh - 120px);">
+        <div class="container">
+            <div class="section-header text-center" style="margin-bottom: 30px;">
+                <h1 class="section-title" style="margin-bottom: 20px;">Demozi Catalog</h1>
+                <p style="max-width: 800px; margin: 0 auto;">
+                    Browse our extensive selection of industrial equipment and technical solutions. Use the WhatsApp button
+                    on any product to instantly connect with our sales team for a custom quotation.
+                </p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container"
+                style="max-width: 600px; margin: 0 auto 40px auto; display: flex; align-items: center; border: var(--border-inset); padding: 5px; background: #ECE9D8;">
+                <label for="productSearch"
+                    style="font-weight: bold; margin-right: 10px; margin-left: 5px; white-space: nowrap;"
+                    data-i18n="search_label">Search
+                    Catalog:</label>
+                <input type="text" id="productSearch" placeholder="e.g. AECO FT13-CF NPN..."
+                    data-i18n-placeholder="search_placeholder"
+                    style="flex: 1; padding: 5px; border: var(--border-inset); font-family: var(--font-main);">
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be injected here dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footer_text">&copy; 2024 Demozi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="products-data.js"></script>
+    <script src="spare-parts-data.js"></script>
+    <script src="products-logic.js"></script>
+    <script src="i18n.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

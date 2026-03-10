@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://megastandard.net/sitemap.xml

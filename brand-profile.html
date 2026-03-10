@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Mega Standard | Brand Profile</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo_transparent.png">
+    <style>
+        .profile-container {
+            background: #FFFFFF;
+            border: var(--border-inset);
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .profile-sidebar {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .brand-logo-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px auto;
+            background: #ECE9D8;
+            border: var(--border-outset);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: var(--win-blue-dark);
+        }
+
+        .profile-content {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .profile-title {
+            font-size: 28px;
+            border-bottom: 2px solid #ACA899;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+
+        .download-box {
+            background: #ECE9D8;
+            border: var(--border-outset);
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .download-box h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-download {
+            background: linear-gradient(180deg, #FFFFFF 0%, #D4D4D4 100%);
+            border: 1px solid #ACA899;
+            padding: 8px 15px;
+            color: #000;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-family: var(--font-main);
+        }
+
+        .btn-download:active {
+            border-color: #808080 #FFFFFF #FFFFFF #808080;
+            background: #D4D0C8;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGZR1V6YV9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FGZR1V6YV9');
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo_transparent.png" alt="Mega Standard Logo" class="logo-img"
+                    style="height: 60px; margin-right: 10px;">
+                <span class="logo-text">Mega Standard</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html#about" class="nav-link" data-i18n="nav_about">About Us</a>
+                <div class="dropdown">
+                    <button class="nav-link dropbtn"><span data-i18n="nav_divisions">Our Divisions</span> <i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="index.html#industrial" data-i18n="nav_industrial">Industrial & Coding Systems</a>
+                        <a href="index.html#cosmetics" data-i18n="nav_cosmetics">Cosmetics & Beauty</a>
+                        <a href="index.html#logistics" data-i18n="nav_logistics">Export & Logistics</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropbtn"><span data-i18n="nav_trademarks">Trademarks</span> <i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="products.html?brand=bestcode">BestCode</a>
+                        <a href="products.html?brand=topjet">TopJet</a>
+                        <a href="products.html?brand=sew-euro-drive">Sew Euro Drive</a>
+                        <a href="products.html?brand=phoenix">Phoenix Contact</a>
+                        <a href="products.html?brand=bimaks">BIMAKS CHEMICAL</a>
+                        <a href="products.html?brand=siemens">Siemens</a>
+                    </div>
+                </div>
+                <a href="brands.html" class="nav-link" style="font-weight: bold; background: rgba(255,255,255,0.2);"
+                    data-i18n="nav_partners">Partners</a>
+                <div class="dropdown">
+                    <button class="nav-link dropbtn"><span data-i18n="nav_products">Products</span> <i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="products.html" data-i18n="full_catalog">Full Catalog</a>
+                        <a href="products.html?category=Spare+Parts" data-i18n="spare_parts">Spare Parts</a>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="btn btn-primary" data-i18n="nav_contact">Contact Us</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="tr">TR</button>
+                    <button class="lang-btn" data-lang="ar">AR</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Content -->
+    <section class="section-padding" style="margin-top: 60px; min-height: calc(100vh - 120px);">
+        <div class="container">
+
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> &gt; <a href="brands.html">Brand Partners</a> &gt; <span
+                    id="bcActiveName">Loading...</span>
+            </div>
+
+            <div class="profile-container" id="profileView">
+                <div class="profile-sidebar">
+                    <div class="brand-logo-placeholder" id="brandLogoFallback">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <img id="brandLogoImg" src="" alt="Brand Logo"
+                        style="max-width: 200px; max-height: 200px; display:none; margin: 0 auto 20px auto;">
+                </div>
+                <div class="profile-content">
+                    <h1 class="profile-title" id="brandTitle">Brand Name</h1>
+                    <p id="descBrandText">Operating as an official partner and distributor for <strong
+                            id="descBrandName">this brand</strong> in the region. We ensure seamless supply chain
+                        integration, offering authentic products sourced directly from the manufacturer.</p>
+
+                    <div class="download-box">
+                        <h3><i class="fas fa-folder-open" style="color: #edb82c; margin-right: 5px;"></i> Official
+                            Documents</h3>
+                        <p style="font-size: 12px; margin-bottom: 10px;">Click below to download the latest PDF
+                            resources. (Add PDFs to the `assets/pdfs/` folder on your server).</p>
+                        <div class="download-buttons">
+                            <!-- In a real scenario, these hrefs would be populated dynamically based on the brand ID -->
+                            <a href="#" class="btn-download" title="Pricing List"><i class="fas fa-file-pdf"
+                                    style="color: #cc0000;"></i> Download Price List</a>
+                            <a href="#" class="btn-download" title="Technical Manual"><i class="fas fa-file-pdf"
+                                    style="color: #cc0000;"></i> Download Manual</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="errorView"
+                style="display: none; padding: 40px; text-align: center; border: var(--border-inset); background: #FFF;">
+                <h2><i class="fas fa-exclamation-triangle" style="color: #cc0000;"></i> Brand Not Found</h2>
+                <p style="margin-top: 10px;">The requested brand profile could not be located in the database.</p>
+                <a href="brands.html" class="btn btn-primary" style="margin-top: 20px;">Return to Brands Library</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footer_text">&copy; 2024 Mega Standard (Demozi). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Data Sources -->
+    <script src="products-data.js"></script>
+    <script src="brands-data.js"></script>
+    <script src="spare-parts-data.js"></script>
+
+    <!-- Scripts -->
+    <script src="i18n.js"></script>
+    <script src="main.js"></script>
+
+    <!-- Dynamic Profile Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const brandId = params.get('id');
+            const data = window.brandsData;
+            const detailsList = window.brandDetails || {};
+
+            const profileView = document.getElementById('profileView');
+            const errorView = document.getElementById('errorView');
+
+            if (!brandId) {
+                profileView.style.display = 'none';
+                errorView.style.display = 'block';
+                return;
+            }
+
+            const brandObj = data.find(b => b.id === brandId);
+
+            if (brandObj) {
+                const specificDetails = detailsList[brandObj.id] || {};
+                const domain = specificDetails.domain || (brandObj.name.toLowerCase().replace(/[^a-z0-9]/g, '') + '.com');
+                const description = specificDetails.desc || `We proudly partner with ${brandObj.name} to deliver their robust industrial and technical solutions. As an official distributor, we provide comprehensive access to their high-quality catalog for our clients in the region.`;
+
+                // Set Labels
+                document.getElementById('pageTitle').textContent = `Mega Standard | ${brandObj.name}`;
+                document.getElementById('brandTitle').textContent = brandObj.name;
+                document.getElementById('bcActiveName').textContent = brandObj.name;
+                document.getElementById('descBrandText').textContent = description;
+
+                // Set Logo Image
+                const logoImg = document.getElementById('brandLogoImg');
+                const fallbackIcon = document.getElementById('brandLogoFallback');
+
+                logoImg.src = `https://logo.clearbit.com/${domain}`;
+
+                logoImg.onload = function () {
+                    fallbackIcon.style.display = 'none';
+                    logoImg.style.display = 'block';
+                };
+                logoImg.onerror = function () {
+                    logoImg.style.display = 'none';
+                    fallbackIcon.style.display = 'flex';
+                };
+
+            } else {
+                profileView.style.display = 'none';
+                errorView.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>

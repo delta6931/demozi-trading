@@ -1,0 +1,18 @@
+[
+  { "name": "BestCode", "description": "BestCode industrial printing systems provide high-speed, reliable continuous inkjet marking and coding solutions for packaging and manufacturing environments." },
+  { "name": "TopJet", "description": "TopJet delivers robust and cost-effective high-resolution inkjet printers for case coding and secondary packaging identification." },
+  { "name": "Sew Euro Drive", "description": "SEW-EURODRIVE stands as a global leader in drive technology and industrial automation, offering highly efficient gearmotors and control systems." },
+  { "name": "Phoenix Contact", "description": "Phoenix Contact provides innovative components, systems, and solutions in the field of electrical engineering, electronics, and automation." },
+  { "name": "BIMAKS CHEMICAL", "description": "BIMAKS Chemical specializes in advanced industrial water treatment chemicals, process treatments, and sustainable chemical solutions." },
+  { "name": "Siemens", "description": "Siemens drives digital transformation with industry-leading automation, drive technology, and industrial software solutions for diverse manufacturing sectors." },
+  { "name": "Fisher", "description": "Fisher control valves and instruments are engineered to deliver precise flow control and process reliability in the most demanding industrial applications." },
+  { "name": "Zanasi", "description": "Zanasi industrial inkjet printers offer versatile and customized product marking systems designed for harsh production environments." },
+  { "name": "ABB", "description": "ABB is a pioneering technology leader in electrification products, robotics, and industrial automation serving customers globally." },
+  { "name": "Allen Bradley", "description": "Allen-Bradley helping manufacturers succeed and grow with industrial automation control and information solutions designed to give customers a competitive advantage." },
+  { "name": "Bentley Nevada", "description": "Bently Nevada provides comprehensive condition monitoring and machinery protection solutions to ensure the reliability of critical industrial assets." },
+  { "name": "Endress+Hauser", "description": "Endress+Hauser is a global leader in measurement instrumentation, services and solutions for industrial process engineering." },
+  { "name": "Foxboro", "description": "Foxboro offers proven measurement and instrumentation solutions designed specifically for process automation and industrial control." },
+  { "name": "Honeywell", "description": "Honeywell invents and manufactures technologies to address severe challenges linked to global macrotrends in energy, safety, security, and industrial automation." },
+  { "name": "Ovation", "description": "Emerson's Ovation expert control system is designed to provide secure and reliable automation for power generation and water/wastewater treatment applications." },
+  { "name": "Rosemount", "description": "Rosemount provides an unparalleled portfolio of measurement and analytical technologies for pressure, temperature, flow, and level applications." }
+]

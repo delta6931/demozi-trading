@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Mega Standard</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo_transparent.png">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGZR1V6YV9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FGZR1V6YV9');
+    </script>
+    <style>
+        .product-detail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            background: #FFFFFF;
+            padding: 15px;
+            border: var(--border-outset);
+            margin-bottom: 40px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .product-detail-image-box {
+            flex: 1 1 100%;
+            min-width: 200px;
+            border: var(--border-inset);
+            padding: 10px;
+            background: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .product-detail-image-box img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        .product-detail-info {
+            flex: 1.5 1 100%;
+            min-width: 200px;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        @media (min-width: 768px) {
+            .product-detail-image-box {
+                flex: 1;
+            }
+
+            .product-detail-info {
+                flex: 1.5;
+            }
+        }
+
+        .product-detail-brand {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--win-blue-light);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .product-detail-title {
+            font-size: 28px;
+            color: var(--win-blue-dark);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .product-detail-category {
+            display: inline-block;
+            background: #ECE9D8;
+            border: var(--border-inset);
+            padding: 3px 8px;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .product-detail-desc {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #f9f9f9;
+            border: 1px dotted #ccc;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .related-products {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo_transparent.png" alt="Mega Standard Logo" class="logo-img"
+                    style="height: 60px; margin-right: 10px;">
+                <span class="logo-text">Mega Standard</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html#about" class="nav-link" data-i18n="nav_about">About Us</a>
+                <div class="dropdown">
+                    <button class="nav-link dropbtn"><span data-i18n="nav_divisions">Our Divisions</span> <i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="index.html#industrial" data-i18n="nav_industrial">Industrial & Coding Systems</a>
+                        <a href="index.html#cosmetics" data-i18n="nav_cosmetics">Cosmetics & Beauty</a>
+                        <a href="index.html#logistics" data-i18n="nav_logistics">Export & Logistics</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropbtn"><span data-i18n="nav_trademarks">Trademarks</span> <i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="products.html?brand=bestcode">BestCode</a>
+                        <a href="products.html?brand=topjet">TopJet</a>
+                        <a href="products.html?brand=sew-euro-drive">Sew Euro Drive</a>
+                        <a href="products.html?brand=phoenix">Phoenix Contact</a>
+                        <a href="products.html?brand=bimaks">BIMAKS CHEMICAL</a>
+                        <a href="products.html?brand=siemens">Siemens</a>
+                    </div>
+                </div>
+                <a href="brands.html" class="nav-link" data-i18n="nav_partners">Partners</a>
+                <div class="dropdown">
+                    <button class="nav-link dropbtn active"
+                        style="font-weight: bold; background: rgba(255,255,255,0.2);"><span
+                            data-i18n="nav_products">Products</span> <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="products.html" data-i18n="full_catalog">Full Catalog</a>
+                        <a href="products.html?category=Spare+Parts" data-i18n="spare_parts">Spare Parts</a>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="btn btn-primary" data-i18n="nav_contact">Contact Us</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="tr">TR</button>
+                    <button class="lang-btn" data-lang="ar">AR</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="section-padding" style="margin-top: 60px; min-height: calc(100vh - 120px);">
+        <div class="container">
+            <div style="margin-bottom: 20px; font-size: 14px;">
+                <a href="products.html">Products</a> &raquo; <span id="breadcrumbCategory"></span> &raquo; <span
+                    id="breadcrumbCurrent" style="color: #666;"></span>
+            </div>
+
+            <div id="productDetailWrapper">
+                <!-- Injected via JS -->
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <h3 class="section-title">Related Products</h3>
+                <div class="product-grid" id="relatedProductsGrid">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footer_text">&copy; 2024 Mega Standard (Demozi). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="products-data.js"></script>
+    <script src="spare-parts-data.js"></script>
+    <script src="product-details.js"></script>
+    <script src="i18n.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
