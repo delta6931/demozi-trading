@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -40,7 +40,7 @@
         <div class="container nav-container">
             <a href="#" class="logo">
                 <img src="assets/logo_transparent.png" alt="Demozi Logo" class="logo-img"
-                    style="height: 60px; margin-right: 10px;">
+                    style="height: 45px; margin-right: 10px;">
                 <div class="logo-text-container">
                     <div class="logo-text">DEMOZI COMPANY</div>
                     <div class="logo-subtitle">General Trading Limited Liability Private Company</div>
@@ -78,7 +78,15 @@
                 </div>
 
                 <a href="brands.html" class="nav-link" data-i18n="nav_brands">Brands</a>
-                <a href="products.html" class="nav-link" data-i18n="nav_products">Products</a>
+                                <div class="dropdown">
+                    <button class="nav-link dropbtn" onclick="window.location.href='products.html'"><span data-i18n="nav_products">Products</span> <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="products.html" data-i18n="nav_all_products">All Products</a>
+                        <a href="products.html?category=industrial" data-i18n="nav_industrial_equip">Industrial Equipment</a>
+                        <a href="products.html?category=cosmetics" data-i18n="nav_cosmetics">Cosmetics</a>
+                        <a href="products.html?category=spare-parts" data-i18n="nav_spare_parts">Spare Parts</a>
+                    </div>
+                </div>
                 <a href="#contact" class="btn btn-primary" data-i18n="nav_contact">Contact Us</a>
 
                 <div class="lang-switcher">
@@ -200,7 +208,7 @@
                         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                             <input type="hidden" name="form-name" value="contact" />
                             <p class="hidden" style="display: none;">
-                                <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                                <label>Donâ€™t fill this out if you're human: <input name="bot-field" /></label>
                             </p>
                             <div class="form-group">
                                 <label for="name" data-i18n="contact_name">Name:</label>
@@ -279,3 +287,4 @@
 </body>
 
 </html>
+
