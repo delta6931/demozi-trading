@@ -73,14 +73,17 @@ const translations = {
         contact_address_ist: "Istanbul, Turkey",
         contact_address_irq: "Baghdad road, Kirkuk, Iraq, 36001",
         contact_phone: "Phone:",
-        footer_text: "\u00A9 2024 Demozi. All rights reserved.",
+        footer_text: "\u00A9 2026 Demozi. All rights reserved.",
 
         brands_page_title: "Demozi | Our Brand Partners",
         brands_heading_main: "Our Brand Partners",
         brands_subtitle: "We are proud to distribute and work alongside the following industry-leading global brands in automation, coding, and cosmetics.",
 
         logo_text: "DEMOZI COMPANY",
-        logo_subtitle: "General Trading Limited Liability Private Company"
+        logo_subtitle: "General Trading Limited Liability Private Company",
+
+        products_heading: "Demozi Catalog",
+        products_subtitle: "Browse our extensive selection of industrial equipment and technical solutions. Use the WhatsApp button on any product to instantly connect with our sales team for a custom quotation."
     },
     tr: {
         nav_about: "Hakkımızda",
@@ -156,14 +159,17 @@ const translations = {
         contact_address_ist: "İstanbul, Türkiye",
         contact_address_irq: "Bağdat yolu, Kerkük, Irak, 36001",
         contact_phone: "Telefon:",
-        footer_text: "\u00A9 2024 Demozi. Tüm hakları saklıdır.",
+        footer_text: "\u00A9 2026 Demozi. Tüm hakları saklıdır.",
 
         brands_page_title: "Demozi | Marka Ortaklarımız",
         brands_heading_main: "Marka Ortaklarımız",
         brands_subtitle: "Otomasyon, kodlama ve kozmetik sektörlerinde endüstri lideri global markaların distribütörlüğünü yapmaktan ve onlarla çalışmaktan gurur duyuyoruz.",
 
         logo_text: "DEMOZİ ŞİRKETİ",
-        logo_subtitle: "Genel Ticaret Limited Şirketi"
+        logo_subtitle: "Genel Ticaret Limited Şirketi",
+
+        products_heading: "Demozi Kataloğu",
+        products_subtitle: "Geniş endüstriyel ekipman ve teknik çözüm yelpazemize göz atın. Özel fiyat teklifi için herhangi bir üründeki WhatsApp butonunu kullanarak satış ekibimizle anında iletişime geçin."
     },
     ar: {
         nav_about: "من نحن",
@@ -239,14 +245,17 @@ const translations = {
         contact_address_ist: "إسطنبول، تركيا",
         contact_address_irq: "طريق بغداد، كركوك، العراق، 36001",
         contact_phone: "الهاتف:",
-        footer_text: "\u00A9 2024 ديموزي. جميع الحقوق محفوظة.",
+        footer_text: "\u00A9 2026 ديموزي. جميع الحقوق محفوظة.",
 
         brands_page_title: "ديموزي | شركاء علاماتنا التجارية",
         brands_heading_main: "شركاء علاماتنا التجارية",
         brands_subtitle: "نفخر بتوزيع والعمل جنباً إلى جنب مع العلامات التجارية العالمية الرائدة في مجال الأتمتة والتشفير ومستحضرات التجميل.",
 
         logo_text: "شركة ديموزي",
-        logo_subtitle: "شركة تجارة عامة ذات مسؤولية محدودة"
+        logo_subtitle: "شركة تجارة عامة ذات مسؤولية محدودة",
+
+        products_heading: "كتالوج ديموزي",
+        products_subtitle: "تصفح مجموعتنا الواسعة من المعدات الصناعية والحلول التقنية. استخدم زر واتساب على أي منتج للتواصل الفوري مع فريق مبيعاتنا للحصول على عرض سعر مخصص."
     }
 };
 
