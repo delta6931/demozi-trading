@@ -77,7 +77,10 @@ const translations = {
 
         brands_page_title: "Demozi | Our Brand Partners",
         brands_heading_main: "Our Brand Partners",
-        brands_subtitle: "We are proud to distribute and work alongside the following industry-leading global brands in automation, coding, and cosmetics."
+        brands_subtitle: "We are proud to distribute and work alongside the following industry-leading global brands in automation, coding, and cosmetics.",
+
+        logo_text: "DEMOZI COMPANY",
+        logo_subtitle: "General Trading Limited Liability Private Company"
     },
     tr: {
         nav_about: "Hakkımızda",
@@ -157,7 +160,10 @@ const translations = {
 
         brands_page_title: "Demozi | Marka Ortaklarımız",
         brands_heading_main: "Marka Ortaklarımız",
-        brands_subtitle: "Otomasyon, kodlama ve kozmetik sektörlerinde endüstri lideri global markaların distribütörlüğünü yapmaktan ve onlarla çalışmaktan gurur duyuyoruz."
+        brands_subtitle: "Otomasyon, kodlama ve kozmetik sektörlerinde endüstri lideri global markaların distribütörlüğünü yapmaktan ve onlarla çalışmaktan gurur duyuyoruz.",
+
+        logo_text: "DEMOZİ ŞİRKETİ",
+        logo_subtitle: "Genel Ticaret Limited Şirketi"
     },
     ar: {
         nav_about: "من نحن",
@@ -237,7 +243,10 @@ const translations = {
 
         brands_page_title: "ديموزي | شركاء علاماتنا التجارية",
         brands_heading_main: "شركاء علاماتنا التجارية",
-        brands_subtitle: "نفخر بتوزيع والعمل جنباً إلى جنب مع العلامات التجارية العالمية الرائدة في مجال الأتمتة والتشفير ومستحضرات التجميل."
+        brands_subtitle: "نفخر بتوزيع والعمل جنباً إلى جنب مع العلامات التجارية العالمية الرائدة في مجال الأتمتة والتشفير ومستحضرات التجميل.",
+
+        logo_text: "شركة ديموزي",
+        logo_subtitle: "شركة تجارة عامة ذات مسؤولية محدودة"
     }
 };
 

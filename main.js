@@ -22,13 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
-        });
+    // Close menu when any nav link is clicked (including dropdown items)
+    function closeMobileMenu() {
+        if (navLinks && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+        }
+    }
+
+    document.querySelectorAll('.nav-link, .nav-links a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
     });
 
     // Smooth scrolling for anchor links
