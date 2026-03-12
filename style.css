@@ -26,8 +26,8 @@ Design System - Mega Standard
     --brand-yellow: #F97316;
 
     /* Typography */
-    --font-heading: 'Inter', 'Roboto', 'Arial', sans-serif;
-    --font-main: 'Inter', 'Roboto', 'Segoe UI', sans-serif;
+    --font-heading: 'Noto Naskh Arabic', 'Inter', 'Roboto', 'Arial', sans-serif;
+    --font-main: 'Noto Naskh Arabic', 'Inter', 'Roboto', 'Segoe UI', sans-serif;
 
     /* Structural Flat Design */
     --border-outset: 1px solid #E5E7EB;
@@ -77,11 +77,18 @@ html[dir="rtl"] .logo {
     flex-direction: row-reverse;
 }
 
+/* RTL: fix logo image margin so there is no gap */
+html[dir="rtl"] .logo-img {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
 /* RTL: Move logo to the right side */
 html[dir="rtl"] .nav-container {
     flex-direction: row-reverse;
 }
 
+/* RTL desktop: reverse nav links row */
 html[dir="rtl"] .nav-links {
     flex-direction: row-reverse;
 }
@@ -93,8 +100,6 @@ html[dir="rtl"] .lang-switcher {
 html[dir="rtl"] .feature-list li {
     flex-direction: row-reverse;
 }
-
-/* End RTL */
 
 /* End RTL */
 
@@ -253,7 +258,7 @@ Navigation
 .logo-text {
     font-size: 1.25rem;
     font-weight: bold;
-    font-family: 'Tahoma', sans-serif;
+    font-family: 'Noto Naskh Arabic', 'Tahoma', sans-serif;
     color: #FFFFFF;
     text-shadow: 1px 1px 2px #000;
     line-height: 1.1;
@@ -262,8 +267,8 @@ Navigation
 .logo-subtitle {
     font-size: 0.65rem;
     color: rgba(255, 255, 255, 0.75);
-    font-family: 'Tahoma', sans-serif;
-    margin-top: 2px;
+    font-family: 'Noto Naskh Arabic', 'Tahoma', sans-serif;
+    margin-top: 0;
 }
 
 .nav-links {
@@ -605,9 +610,13 @@ Responsive
         padding: 15px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         z-index: 1000;
+        overflow: visible;
     }
 
+    /* RTL mobile: keep column direction, align items to the right */
     html[dir="rtl"] .nav-links {
+        flex-direction: column;
+        align-items: flex-end;
         left: 0;
         right: 0;
     }
@@ -642,6 +651,7 @@ Responsive
     html[dir="rtl"] .dropdown-content {
         padding-left: 0;
         padding-right: 15px;
+        text-align: right;
     }
 
     .dropdown:hover .dropdown-content {
@@ -654,6 +664,16 @@ Responsive
         border-left: none;
         margin-top: 10px;
         justify-content: flex-start;
+    }
+
+    /* RTL mobile: language switcher right-aligned and visible */
+    html[dir="rtl"] .lang-switcher {
+        justify-content: flex-end;
+        margin-right: 0;
+        padding-right: 0;
+        border-right: none;
+        margin-top: 10px;
+        flex-direction: row;
     }
 
     .mobile-menu-btn {
