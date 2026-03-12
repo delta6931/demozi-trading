@@ -83,7 +83,9 @@ const translations = {
         logo_subtitle: "General Trading Limited Liability Private Company",
 
         products_heading: "Demozi Catalog",
-        products_subtitle: "Browse our extensive selection of industrial equipment and technical solutions. Use the WhatsApp button on any product to instantly connect with our sales team for a custom quotation."
+        products_subtitle: "Browse our extensive selection of industrial equipment and technical solutions. Use the WhatsApp button on any product to instantly connect with our sales team for a custom quotation.",
+
+        brands_hero_subtitle: "Demozi partners with the world\u2019s leading industrial manufacturers to bring you unmatched quality, reliability, and precision engineering."
     },
     tr: {
         nav_about: "Hakkımızda",
@@ -169,7 +171,9 @@ const translations = {
         logo_subtitle: "Genel Ticaret Limited Şirketi",
 
         products_heading: "Demozi Kataloğu",
-        products_subtitle: "Geniş endüstriyel ekipman ve teknik çözüm yelpazemize göz atın. Özel fiyat teklifi için herhangi bir üründeki WhatsApp butonunu kullanarak satış ekibimizle anında iletişime geçin."
+        products_subtitle: "Geniş endüstriyel ekipman ve teknik çözüm yelpazemize göz atın. Özel fiyat teklifi için herhangi bir üründeki WhatsApp butonunu kullanarak satış ekibimizle anında iletişime geçin.",
+
+        brands_hero_subtitle: "Demozi, size eşsiz kalite, güvenilirlik ve hassas mühendislik sunmak için dünyanın önde gelen endüstriyel üreticileriyle iş birliği yapmaktadır."
     },
     ar: {
         nav_about: "من نحن",
@@ -255,7 +259,9 @@ const translations = {
         logo_subtitle: "شركة تجارة عامة ذات مسؤولية محدودة",
 
         products_heading: "كتالوج ديموزي",
-        products_subtitle: "تصفح مجموعتنا الواسعة من المعدات الصناعية والحلول التقنية. استخدم زر واتساب على أي منتج للتواصل الفوري مع فريق مبيعاتنا للحصول على عرض سعر مخصص."
+        products_subtitle: "تصفح مجموعتنا الواسعة من المعدات الصناعية والحلول التقنية. استخدم زر واتساب على أي منتج للتواصل الفوري مع فريق مبيعاتنا للحصول على عرض سعر مخصص.",
+
+        brands_hero_subtitle: "تتشارك ديموزي مع كبار المصنعين الصناعيين في العالم لتقديم جودة وموثوقية وهندسة دقيقة لا مثيل لها."
     }
 };
 
