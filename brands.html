@@ -4,15 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Brands | Demozi</title>
-    <meta name="description" content="Explore our extensive portfolio of world-renowned industrial and manufacturing brands including Allen Bradley, ABB, Siemens, and more.">
+    <meta name="description" content="Explore our extensive portfolio of world-renowned industrial and manufacturing brands including Allen Bradley, ABB, Siemens, IFM, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/logo_transparent.png">
+    <style>
+        .brands-page-hero {
+            background: #fff;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #eaeaea;
+            text-align: center;
+            margin-top: 80px;
+        }
+        .brands-page-hero h1 {
+            font-size: 2.8rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .brands-page-hero p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .brands-logo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 50px 0;
+        }
+        .brand-logo-card {
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 24px 16px 18px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-height: 130px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            cursor: pointer;
+        }
+        .brand-logo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            border-color: var(--win-blue-light);
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        .brand-logo-card img {
+            max-height: 60px;
+            max-width: 100%;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+        .brand-logo-card .brand-name {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #555;
+            line-height: 1.3;
+        }
+        .brand-logo-card.text-only .brand-name {
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+        @media (max-width: 900px) {
+            .brands-logo-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+            .brands-page-hero h1 { font-size: 2rem; }
+        }
+        @media (max-width: 560px) {
+            .brands-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .brand-logo-card { padding: 18px 10px 14px; min-height: 110px; }
+        }
+    </style>
 </head>
-<body style="background-color: #f4f6f9;">
+<body>
     <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
@@ -26,16 +107,16 @@
             <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
-            
+
             <nav class="nav-links">
                 <a href="index.html#about" class="nav-link" data-i18n="nav_about">About Us</a>
-                
+
                 <div class="dropdown">
                     <button class="nav-link dropbtn"><span data-i18n="nav_divisions">Our Divisions</span> <i class="fas fa-chevron-down"></i></button>
                     <div class="dropdown-content">
-                        <a href="index.html#industrial" data-i18n="nav_industrial">Industrial & Coding Systems</a>
-                        <a href="index.html#cosmetics" data-i18n="nav_cosmetics">Cosmetics & Beauty</a>
-                        <a href="index.html#logistics" data-i18n="nav_logistics">Export & Logistics</a>
+                        <a href="index.html#industrial" data-i18n="nav_industrial">Industrial &amp; Coding Systems</a>
+                        <a href="index.html#automation" data-i18n="nav_automation">Factory Automation</a>
+                        <a href="index.html#safety" data-i18n="nav_safety">Safety Solutions</a>
                     </div>
                 </div>
 
@@ -52,15 +133,17 @@
                 </div>
 
                 <a href="brands.html" class="nav-link active" data-i18n="nav_brands">Brands</a>
-                                <div class="dropdown">
+
+                <div class="dropdown">
                     <button class="nav-link dropbtn" onclick="window.location.href='products.html'"><span data-i18n="nav_products">Products</span> <i class="fas fa-chevron-down"></i></button>
-                                        <div class="dropdown-content">
+                    <div class="dropdown-content">
                         <a href="products.html" data-i18n="nav_all_products">All Products</a>
                         <a href="products.html?category=Sensor Intelligence" data-i18n="nav_industrial_equip">Industrial Sensors</a>
-                        <a href="products.html?category=Cosmetics" data-i18n="nav_cosmetics">Cosmetics & Beauty</a>
-                        <a href="products.html?category=Cables" data-i18n="nav_spare_parts">Cables & Accessories</a>
+                        <a href="products.html?category=Cosmetics" data-i18n="nav_cosmetics">Cosmetics &amp; Beauty</a>
+                        <a href="products.html?category=Cables" data-i18n="nav_spare_parts">Cables &amp; Accessories</a>
                     </div>
                 </div>
+
                 <a href="index.html#contact" class="btn btn-primary" data-i18n="nav_contact">Contact Us</a>
 
                 <div class="lang-switcher">
@@ -72,30 +155,354 @@
         </div>
     </header>
 
-    <div style="background-color: #fff; padding: 60px 0; border-bottom: 1px solid #eaeaea; text-align: center; margin-top: 80px;">
+    <div class="brands-page-hero">
         <div class="container">
-            <h1 style="font-size: 3rem; color: var(--text-primary); margin-bottom: 15px; text-transform: uppercase; font-weight: 800;" data-i18n="brands_heading_main">Our Brands</h1>
-            <p style="font-size: 1.2rem; color: #555; max-width: 800px; margin: 0 auto; line-height: 1.6;" data-i18n="brands_hero_subtitle">Demozi partners with the world's leading industrial manufacturers to bring you unmatched quality, reliability, and precision engineering.</p>
+            <h1 data-i18n="brands_heading_main">Our Brand Partners</h1>
+            <p data-i18n="brands_hero_subtitle">Demozi partners with the world's leading industrial manufacturers to bring you unmatched quality, reliability, and precision engineering.</p>
         </div>
     </div>
 
-    <section class="section-padding" style="min-height: calc(100vh - 400px); padding-top: 60px;">
+    <section style="background: #f4f6f9; padding-bottom: 60px;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
-                <a href='brands/abb.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>ABB</h3></a><a href='brands/allen-bradley.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Allen Bradley</h3></a><a href='brands/bentley-nevada.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Bentley Nevada</h3></a><a href='brands/bestcode.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>BestCode</h3></a><a href='brands/bimaks-chemical.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>BIMAKS CHEMICAL</h3></a><a href='brands/endress-hauser.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Endress+Hauser</h3></a><a href='brands/fisher.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Fisher</h3></a><a href='brands/foxboro.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Foxboro</h3></a><a href='brands/honeywell.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Honeywell</h3></a><a href='brands/ifm-r-nleri.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>ifm-r-nleri</h3></a><a href='brands/ovation.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Ovation</h3></a><a href='brands/parker-meggitt-r-nleri.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>parker-meggitt-r-nleri</h3></a><a href='brands/phoenix-contact.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Phoenix Contact</h3></a><a href='brands/rosemount.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Rosemount</h3></a><a href='brands/sew-euro-drive.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Sew Euro Drive</h3></a><a href='brands/sick-sensor-intelligence.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>sick-sensor-intelligence</h3></a><a href='brands/siemens.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Siemens</h3></a><a href='brands/topjet.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>TopJet</h3></a><a href='brands/zanasi.html' style='display:block; padding:40px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center; text-decoration:none; color:var(--text-primary); font-family:Inter,sans-serif; transition:transform 0.2s, box-shadow 0.2s;' onmouseover='this.style.transform="translateY(-5px)";this.style.boxShadow="0 8px 25px rgba(0,0,0,0.1)"' onmouseout='this.style.transform="translateY(0)";this.style.boxShadow="0 4px 15px rgba(0,0,0,0.05)"'><h3 style='margin:0; font-size:1.5rem; text-transform:uppercase;'>Zanasi</h3></a>
+            <div class="brands-logo-grid">
+
+                <!-- ===== EXISTING BRANDS WITH MATCHING LOGOS ===== -->
+                <a href="brands/allen-bradley.html" class="brand-logo-card">
+                    <img src="assets/brands/allen-bradley.jpg" alt="Allen Bradley">
+                    <span class="brand-name">Allen Bradley</span>
+                </a>
+                <a href="brands/endress-hauser.html" class="brand-logo-card">
+                    <img src="assets/brands/endress-hauser.jpg" alt="Endress+Hauser">
+                    <span class="brand-name">Endress+Hauser</span>
+                </a>
+                <a href="brands/honeywell.html" class="brand-logo-card">
+                    <img src="assets/brands/honeywell.jpg" alt="Honeywell">
+                    <span class="brand-name">Honeywell</span>
+                </a>
+                <a href="brands/ifm-r-nleri.html" class="brand-logo-card">
+                    <img src="assets/brands/ifm-electronic.jpg" alt="IFM Electronic">
+                    <span class="brand-name">IFM Electronic</span>
+                </a>
+                <a href="brands/parker-meggitt-r-nleri.html" class="brand-logo-card">
+                    <img src="assets/brands/parker.jpg" alt="Parker">
+                    <span class="brand-name">Parker</span>
+                </a>
+                <a href="brands/phoenix-contact.html" class="brand-logo-card">
+                    <img src="assets/brands/phoenix.jpg" alt="Phoenix Contact">
+                    <span class="brand-name">Phoenix Contact</span>
+                </a>
+                <a href="brands/siemens.html" class="brand-logo-card">
+                    <img src="assets/brands/siemens.png" alt="Siemens">
+                    <span class="brand-name">Siemens</span>
+                </a>
+
+                <!-- ===== NEW LOGO BRANDS (all from site files) ===== -->
+                <div class="brand-logo-card">
+                    <img src="assets/brands/ac-motoren.jpg" alt="AC Motoren">
+                    <span class="brand-name">AC Motoren</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/aeco.jpg" alt="AECO">
+                    <span class="brand-name">AECO</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/ascon-technologic.jpg" alt="Ascon Technologic">
+                    <span class="brand-name">Ascon Technologic</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/balluff.jpg" alt="Balluff">
+                    <span class="brand-name">Balluff</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/baumer.jpg" alt="Baumer">
+                    <span class="brand-name">Baumer</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/beckhoff.jpg" alt="Beckhoff">
+                    <span class="brand-name">Beckhoff</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/belimo.jpg" alt="Belimo">
+                    <span class="brand-name">Belimo</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/benedict-jager.jpg" alt="Benedict Jager">
+                    <span class="brand-name">Benedict Jager</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/bernstein.jpg" alt="Bernstein">
+                    <span class="brand-name">Bernstein</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/camlogic.jpg" alt="Camlogic">
+                    <span class="brand-name">Camlogic</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/danfoss.jpg" alt="Danfoss">
+                    <span class="brand-name">Danfoss</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/datalogic-datasensor.jpg" alt="Datalogic Datasensor">
+                    <span class="brand-name">Datalogic Datasensor</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/di-soric.jpg" alt="Di-Soric">
+                    <span class="brand-name">Di-Soric</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/ebmpapst.jpg" alt="ebm-papst">
+                    <span class="brand-name">ebm-papst</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/elap.jpg" alt="ELAP">
+                    <span class="brand-name">ELAP</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/elcis.jpg" alt="Elcis">
+                    <span class="brand-name">Elcis</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/elobau.jpg" alt="Elobau">
+                    <span class="brand-name">Elobau</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/eltra.jpg" alt="Eltra">
+                    <span class="brand-name">Eltra</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/emas-group.jpg" alt="EMAS Group">
+                    <span class="brand-name">EMAS Group</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/epa.jpg" alt="EPA">
+                    <span class="brand-name">EPA</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/epe.jpg" alt="EPE">
+                    <span class="brand-name">EPE</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/euchner.jpg" alt="Euchner">
+                    <span class="brand-name">Euchner</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/festo.jpg" alt="Festo">
+                    <span class="brand-name">Festo</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/finder.jpg" alt="Finder">
+                    <span class="brand-name">Finder</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/fluke.jpg" alt="Fluke">
+                    <span class="brand-name">Fluke</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/gardner-denver.jpg" alt="Gardner Denver">
+                    <span class="brand-name">Gardner Denver</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/gefran.jpg" alt="Gefran">
+                    <span class="brand-name">Gefran</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/heidenhain.jpg" alt="Heidenhain">
+                    <span class="brand-name">Heidenhain</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/hengstler.jpg" alt="Hengstler">
+                    <span class="brand-name">Hengstler</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/hohner.jpg" alt="Hohner">
+                    <span class="brand-name">Hohner</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/idec.jpg" alt="IDEC">
+                    <span class="brand-name">IDEC</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/ipf-electronic.jpg" alt="IPF Electronic">
+                    <span class="brand-name">IPF Electronic</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/jumo.jpg" alt="JUMO">
+                    <span class="brand-name">JUMO</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/keyence.jpg" alt="Keyence">
+                    <span class="brand-name">Keyence</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/klaschka.jpg" alt="Klaschka">
+                    <span class="brand-name">Klaschka</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/kobold.jpg" alt="Kobold">
+                    <span class="brand-name">Kobold</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/kromschroder.jpg" alt="Kromschröder">
+                    <span class="brand-name">Kromschröder</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/kubler.jpg" alt="Kübler">
+                    <span class="brand-name">Kübler</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/leine-linde.jpg" alt="Leine &amp; Linde">
+                    <span class="brand-name">Leine &amp; Linde</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/leuze-electronic.jpg" alt="Leuze Electronic">
+                    <span class="brand-name">Leuze Electronic</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/mesan.jpg" alt="Mesan">
+                    <span class="brand-name">Mesan</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/microdedector-diell.jpg" alt="Microdetector Diell">
+                    <span class="brand-name">Microdetector Diell</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/microsonic.jpg" alt="Microsonic">
+                    <span class="brand-name">Microsonic</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/mucco.jpg" alt="Mucco">
+                    <span class="brand-name">Mucco</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/murr.jpg" alt="Murr Elektronik">
+                    <span class="brand-name">Murr Elektronik</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/noding.jpg" alt="Noding">
+                    <span class="brand-name">Noding</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/norgren.jpg" alt="Norgren">
+                    <span class="brand-name">Norgren</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/omron.jpg" alt="Omron">
+                    <span class="brand-name">Omron</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/panasonic.jpg" alt="Panasonic">
+                    <span class="brand-name">Panasonic</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/pilz.jpg" alt="Pilz">
+                    <span class="brand-name">Pilz</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/pizzato.jpg" alt="Pizzato">
+                    <span class="brand-name">Pizzato</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/pulso-tronic.jpg" alt="Pulso Tronic">
+                    <span class="brand-name">Pulso Tronic</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/rechner-sensors.jpg" alt="Rechner Sensors">
+                    <span class="brand-name">Rechner Sensors</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/rittal.jpg" alt="Rittal">
+                    <span class="brand-name">Rittal</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/schmersal.jpg" alt="Schmersal">
+                    <span class="brand-name">Schmersal</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/schneider.jpg" alt="Schneider Electric">
+                    <span class="brand-name">Schneider Electric</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/seikom.jpg" alt="Seikom">
+                    <span class="brand-name">Seikom</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/selet.jpg" alt="Selet">
+                    <span class="brand-name">Selet</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/smc.jpg" alt="SMC">
+                    <span class="brand-name">SMC</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/steute.jpg" alt="Steute">
+                    <span class="brand-name">Steute</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/telco.jpg" alt="Telco">
+                    <span class="brand-name">Telco</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/wachendorff.jpg" alt="Wachendorff">
+                    <span class="brand-name">Wachendorff</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/wenglor.jpg" alt="Wenglor">
+                    <span class="brand-name">Wenglor</span>
+                </div>
+                <div class="brand-logo-card">
+                    <img src="assets/brands/wika.jpg" alt="WIKA">
+                    <span class="brand-name">WIKA</span>
+                </div>
+
+                <!-- ===== EXISTING BRANDS WITHOUT MATCHING LOGOS (text only) ===== -->
+                <a href="brands/abb.html" class="brand-logo-card text-only">
+                    <span class="brand-name">ABB</span>
+                </a>
+                <a href="brands/bentley-nevada.html" class="brand-logo-card text-only">
+                    <span class="brand-name">Bentley Nevada</span>
+                </a>
+                <a href="brands/bestcode.html" class="brand-logo-card text-only">
+                    <span class="brand-name">BestCode</span>
+                </a>
+                <a href="brands/bimaks-chemical.html" class="brand-logo-card text-only">
+                    <span class="brand-name">BIMAKS Chemical</span>
+                </a>
+                <a href="brands/fisher.html" class="brand-logo-card text-only">
+                    <span class="brand-name">Fisher</span>
+                </a>
+                <a href="brands/foxboro.html" class="brand-logo-card text-only">
+                    <span class="brand-name">Foxboro</span>
+                </a>
+                <a href="brands/ovation.html" class="brand-logo-card text-only">
+                    <span class="brand-name">Ovation</span>
+                </a>
+                <a href="brands/rosemount.html" class="brand-logo-card text-only">
+                    <span class="brand-name">Rosemount</span>
+                </a>
+                <a href="brands/sew-euro-drive.html" class="brand-logo-card text-only">
+                    <span class="brand-name">SEW Euro Drive</span>
+                </a>
+                <a href="brands/sick-sensor-intelligence.html" class="brand-logo-card text-only">
+                    <span class="brand-name">SICK</span>
+                </a>
+                <a href="brands/topjet.html" class="brand-logo-card text-only">
+                    <span class="brand-name">TopJet</span>
+                </a>
+                <a href="brands/zanasi.html" class="brand-logo-card text-only">
+                    <span class="brand-name">Zanasi</span>
+                </a>
+
             </div>
         </div>
     </section>
 
-    <footer class="footer" style="background-color: var(--win-blue); color: #fff; padding: 40px 0; text-align: center;">
+    <footer class="footer">
         <div class="container">
             <p data-i18n="footer_text">&copy; 2026 Demozi. All rights reserved.</p>
         </div>
     </footer>
+
     <script src="i18n.js" charset="utf-8"></script>
     <script src="main.js"></script>
 </body>
 </html>
-
-
-
