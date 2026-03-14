@@ -29,6 +29,11 @@ const translations = {
         hero_btn_industrial: "Explore Catalog",
         hero_btn_cosmetics: "Contact Sales",
 
+        featured_badge: "In Our Inventory",
+        featured_title: "Products From Our Inventory",
+        featured_subtitle: "Real items from our stock — ready for delivery across the Middle East.",
+        featured_cta: "View Full Catalog →",
+
         about_title: "Who We Are",
         about_p1: "Demozi is a specialized supplier of premier industrial automation components, ensuring factories and manufacturing plants operate at maximum efficiency. Based in the Middle East, our technical team works closely with engineers to source critical parts.",
         about_p2: "We focus entirely on high-quality sensors, vibration monitoring, cables, and process intelligence tools to keep your production lines moving without interruption.",
@@ -117,6 +122,11 @@ const translations = {
         hero_btn_industrial: "Katalogu Keşfet",
         hero_btn_cosmetics: "Satış İletişimi",
 
+        featured_badge: "Stoğumuzdan",
+        featured_title: "Stoğumuzdaki Ürünler",
+        featured_subtitle: "Gerçek stoğumuzdan ürünler — Orta Doğu genelinde teslimat için hazır.",
+        featured_cta: "Tam Kataloğu Görüntüle →",
+
         about_title: "Biz Kimiz",
         about_p1: "2012'de kurulan Demozi, Türkiye, Avrupa ve Irak pazarlarını birleştiren on yılı aşkın deneyime sahiptir. İstanbul ve Kerkük'te faaliyet gösteren uzman ekibimiz, dünyaca ünlü markaların özel distribütörlüğünü yönetmektedir.",
         about_p2: "Ağır makine ve kodlama sistemleri tedarikinden, tam kapsamlı lojistik yönetimi ve premium kozmetik perakendesine kadar eksiksiz çözümler sunmaktan gurur duyuyoruz.",
@@ -204,6 +214,11 @@ const translations = {
         hero_subtitle: "من معدات الترميز الصناعية الدقيقة إلى مستحضرات التجميل الأوروبية المميزة، نقدم التميز عبر الحدود.",
         hero_btn_industrial: "استكشف الكتالوج",
         hero_btn_cosmetics: "تواصل مع المبيعات",
+
+        featured_badge: "من مخزوننا",
+        featured_title: "منتجات من مخزوننا",
+        featured_subtitle: "منتجات حقيقية من مخزوننا — جاهزة للتسليم في جميع أنحاء الشرق الأوسط.",
+        featured_cta: "عرض الكتالوج الكامل →",
 
         about_title: "من نحن",
         about_p1: "تأسست شركة ديموزي عام 2012، ولديها أكثر من عقد من الخبرة في ربط أسواق تركيا وأوروبا والعراق. يعمل فريقنا المتخصص من مدينتي إسطنبول وكركوك ويدير التوزيع الحصري لعلامات تجارية عالمية شهيرة.",
