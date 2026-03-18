@@ -96,18 +96,36 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('preferredLang', lang);
     }
 
-    // Set initial language
+    // Set initial language (auto-detect based on timezone + browser language)
     let savedLang = localStorage.getItem('preferredLang');
     if (!savedLang) {
         try {
             const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            if (tz === 'Asia/Baghdad' || tz.startsWith('Asia/Riyadh') || tz.startsWith('Asia/Dubai')) {
-                savedLang = 'ar';
-            } else if (tz === 'Europe/Istanbul') {
+            // Get all browser languages (primary + fallbacks)
+            const navLangs = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
+            const primaryLang = navLangs[0].toLowerCase();
+            const hasEnglish = navLangs.some(l => l.toLowerCase().startsWith('en'));
+            const hasTurkish = navLangs.some(l => l.toLowerCase().startsWith('tr'));
+            const hasArabic  = navLangs.some(l => l.toLowerCase().startsWith('ar'));
+
+            if (tz === 'Europe/Istanbul' || hasTurkish) {
+                // User is in Turkey or has Turkish set on their device
                 savedLang = 'tr';
+            } else if (
+                tz === 'Asia/Baghdad' ||
+                tz === 'Asia/Riyadh' ||
+                tz === 'Asia/Dubai' ||
+                tz === 'Asia/Kuwait' ||
+                tz === 'Asia/Qatar' ||
+                tz === 'Asia/Muscat' ||
+                tz === 'Africa/Cairo' ||
+                hasArabic
+            ) {
+                // User is in an Arabic-speaking region or has Arabic set
+                savedLang = 'ar';
             } else {
-                const navLang = navigator.language || navigator.userLanguage;
-                savedLang = navLang.startsWith('tr') ? 'tr' : (navLang.startsWith('ar') ? 'ar' : 'en');
+                // Default to English for everyone else
+                savedLang = 'en';
             }
         } catch (e) {
             savedLang = 'en';
