@@ -1025,10 +1025,19 @@ Product Showcase / Collage Section
 }
 
 .product-collage {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 220px;
+    display: flex;
+    flex-direction: row;
     gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+
+.product-collage::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
 }
 
 .collage-item {
@@ -1038,22 +1047,17 @@ Product Showcase / Collage Section
     border: 1px solid var(--win-border-light);
     background: #f0f0f0;
     cursor: pointer;
+    flex: 0 0 220px;
+    height: 220px;
+    scroll-snap-align: start;
 }
 
-/* Large item spans 2 cols and 2 rows */
-.collage-item.collage-large {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-/* Wide item spans 2 cols */
-.collage-item.collage-wide {
-    grid-column: span 2;
-}
-
-/* Tall item spans 2 rows */
+/* Remove grid span classes — all items are now equal size */
+.collage-item.collage-large,
+.collage-item.collage-wide,
 .collage-item.collage-tall {
-    grid-row: span 2;
+    flex: 0 0 220px;
+    height: 220px;
 }
 
 .collage-item img {
@@ -1091,37 +1095,46 @@ Product Showcase / Collage Section
     text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
+/* Fade indicator on right edge to hint scrollability */
+.products-showcase .container {
+    position: relative;
+}
+
+.products-showcase .container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, var(--bg-secondary));
+    pointer-events: none;
+    z-index: 2;
+}
+
 .showcase-cta {
     text-align: center;
     margin-top: 2.5rem;
 }
 
-/* Responsive: 2-col on tablet */
+/* Responsive: slightly smaller on mobile */
 @media (max-width: 768px) {
-    .product-collage {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 160px;
-        gap: 8px;
-    }
-
-    .collage-item.collage-large {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-
-    .collage-item.collage-wide {
-        grid-column: span 2;
-    }
-
+    .collage-item,
+    .collage-item.collage-large,
+    .collage-item.collage-wide,
     .collage-item.collage-tall {
-        grid-row: span 1;
+        flex: 0 0 170px;
+        height: 170px;
     }
 }
 
-/* Responsive: 1-col on mobile */
 @media (max-width: 480px) {
-    .product-collage {
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 130px;
+    .collage-item,
+    .collage-item.collage-large,
+    .collage-item.collage-wide,
+    .collage-item.collage-tall {
+        flex: 0 0 140px;
+        height: 140px;
     }
 }
+
