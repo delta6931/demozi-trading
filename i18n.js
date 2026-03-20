@@ -78,14 +78,14 @@ const translations = {
         contact_address_ist: "Istanbul, Turkey",
         contact_address_irq: "Baghdad road, Kirkuk, Iraq, 36001",
         contact_phone: "Phone:",
-        footer_text: "\u00A9 2026 Demozi Kozmetik ve Makina D\u0131\u015f Ticaret Ltd. \u015eti. All rights reserved.",
+        footer_text: "© 2026 Demozi Kozmetik ve Makina Dış Ticaret Ltd. Şti. All rights reserved.",
 
         brands_page_title: "Demozi | Our Brand Partners",
         brands_heading_main: "Our Brand Partners",
         brands_subtitle: "We are proud to distribute and work alongside the following industry-leading global brands in automation, coding, and cosmetics.",
 
-        logo_text: "DEMOZ\u0130",
-        logo_subtitle: "Kozmetik ve Makina D\u0131\u015f Ticaret Ltd. \u015eti.",
+        logo_text: "DEMOZİ",
+        logo_subtitle: "Kozmetik ve Makina Dış Ticaret Ltd. Şti.",
 
         products_heading: "Demozi Catalog",
         products_subtitle: "Browse our extensive selection of industrial equipment and technical solutions. Use the WhatsApp button on any product to instantly connect with our sales team for a custom quotation.",
@@ -171,14 +171,14 @@ const translations = {
         contact_address_ist: "İstanbul, Türkiye",
         contact_address_irq: "Bağdat Caddesi, Kerkük, Irak, 36001",
         contact_phone: "Telefon:",
-        footer_text: "\u00A9 2026 Demozi Kozmetik ve Makina D\u0131\u015f Ticaret Ltd. \u015eti. T\u00fcm haklar\u0131 sakl\u0131d\u0131r.",
+        footer_text: "© 2026 Demozi Kozmetik ve Makina Dış Ticaret Ltd. Şti. Tüm hakları saklıdır.",
 
-        brands_page_title: "Demozi | Marka Ortaklar\u0131m\u0131z",
-        brands_heading_main: "Marka Ortaklar\u0131m\u0131z",
-        brands_subtitle: "Otomasyon, kodlama ve kozmetik sekt\u00f6rlerindeki end\u00fcstri lideri k\u00fcresel markalar\u0131 da\u011f\u0131tmaktan ve bu markalarla i\u015f birli\u011fi yapmaktan gurur duyuyoruz.",
+        brands_page_title: "Demozi | Marka Ortaklarımız",
+        brands_heading_main: "Marka Ortaklarımız",
+        brands_subtitle: "Otomasyon, kodlama ve kozmetik sektörlerindeki endüstri lideri küresel markaları dağıtmaktan ve bu markalarla iş birliği yapmaktan gurur duyuyoruz.",
 
-        logo_text: "DEMOZ\u0130",
-        logo_subtitle: "Kozmetik ve Makina D\u0131\u015f Ticaret Ltd. \u015eti.",
+        logo_text: "DEMOZİ",
+        logo_subtitle: "Kozmetik ve Makina Dış Ticaret Ltd. Şti.",
 
         products_heading: "Demozi Kataloğu",
         products_subtitle: "Geniş endüstriyel ekipman ve teknik çözüm yelpazemizi inceleyin. Özel fiyat teklifi almak için herhangi bir üründeki WhatsApp butonuna tıklayarak satış ekibimizle anında iletişime geçebilirsiniz.",
@@ -264,14 +264,14 @@ const translations = {
         contact_address_ist: "إسطنبول، تركيا",
         contact_address_irq: "طريق بغداد، كركوك، العراق، 36001",
         contact_phone: "الهاتف:",
-        footer_text: "\u00A9 2026 Demozi Kozmetik ve Makina D\u0131\u015f Ticaret Ltd. \u015eti. \u062c\u0645\u064a\u0639 \u0627\u0644\u062d\u0642\u0648\u0642 \u0645\u062d\u0641\u0648\u0638\u0629.",
+        footer_text: "© 2026 Demozi Kozmetik ve Makina Dış Ticaret Ltd. Şti. جميع الحقوق محفوظة.",
 
-        brands_page_title: "\u062f\u064a\u0645\u0648\u0632\u064a | \u0634\u0631\u0643\u0627\u0621 \u0639\u0644\u0627\u0645\u0627\u062a\u0646\u0627 \u0627\u0644\u062a\u062c\u0627\u0631\u064a\u0629",
-        brands_heading_main: "\u0634\u0631\u0643\u0627\u0621 \u0639\u0644\u0627\u0645\u0627\u062a\u0646\u0627 \u0627\u0644\u062a\u062c\u0627\u0631\u064a\u0629",
-        brands_subtitle: "\u0646\u0641\u062e\u0631 \u0628\u062a\u0648\u0632\u064a\u0639 \u0648\u0627\u0644\u0639\u0645\u0644 \u062c\u0646\u0628\u0627\u064b \u0625\u0644\u0649 \u062c\u0646\u0628 \u0645\u0639 \u0627\u0644\u0639\u0644\u0627\u0645\u0627\u062a \u0627\u0644\u062a\u062c\u0627\u0631\u064a\u0629 \u0627\u0644\u0639\u0627\u0644\u0645\u064a\u0629 \u0627\u0644\u0631\u0627\u0626\u062f\u0629 \u0641\u064a \u0645\u062c\u0627\u0644 \u0627\u0644\u0623\u062a\u0645\u062a\u0629 \u0648\u0627\u0644\u062a\u0634\u0641\u064a\u0631 \u0648\u0645\u0633\u062a\u062d\u0636\u0631\u0627\u062a \u0627\u0644\u062a\u062c\u0645\u064a\u0644.",
+        brands_page_title: "ديموزي | شركاء علاماتنا التجارية",
+        brands_heading_main: "شركاء علاماتنا التجارية",
+        brands_subtitle: "نفخر بتوزيع والعمل جنباً إلى جنب مع العلامات التجارية العالمية الرائدة في مجال الأتمتة والتشفير ومستحضرات التجميل.",
 
-        logo_text: "DEMOZ\u0130",
-        logo_subtitle: "Kozmetik ve Makina D\u0131\u015f Ticaret Ltd. \u015eti.",
+        logo_text: "DEMOZİ",
+        logo_subtitle: "Kozmetik ve Makina Dış Ticaret Ltd. Şti.",
 
         products_heading: "كتالوج ديموزي",
         products_subtitle: "تصفح مجموعتنا الواسعة من المعدات الصناعية والحلول التقنية. استخدم زر واتساب على أي منتج للتواصل الفوري مع فريق مبيعاتنا للحصول على عرض سعر مخصص.",
