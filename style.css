@@ -769,6 +769,29 @@ textarea.form-control {
     color: #9CA3AF;
 }
 
+.policy-hero,
+.policy-hero h1,
+.policy-hero .h1-sub,
+.policy-hero .last-updated {
+    color: #FFFFFF !important;
+}
+
+.footer-link {
+    color: #FFFFFF;
+    text-decoration: underline;
+    font-weight: 500;
+    opacity: 0.9;
+    padding: 4px 8px;
+    transition: all 0.2s;
+    border-radius: 4px !important;
+}
+
+.footer-link:hover {
+    color: var(--win-blue-light);
+    opacity: 1;
+    background: rgba(255,255,255,0.1);
+}
+
 /* 
 ========================================
 Brands Page Elements
@@ -1089,10 +1112,11 @@ Product Showcase / Collage Section
 }
 
 .collage-overlay span {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
     letter-spacing: 0.03em;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    color: #FFFFFF;
+    text-shadow: 1px 1px 4px rgba(0,0,0,1);
 }
 
 /* Fade indicator on right edge to hint scrollability */
