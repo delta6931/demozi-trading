@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme | Demozi</title>
+    <meta name="description" content="Güvenli ödeme sayfası - PayTR ile ödeme yapın.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo_transparent.png">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QLGZ68RZXR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QLGZ68RZXR');
+    </script>
+
+    <style>
+        /* ── Page Layout ─────────────────────────────────────────────────── */
+        body { background: #f0f4f8; }
+        .checkout-wrapper {
+            min-height: calc(100vh - 140px);
+            padding: 100px 20px 60px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* ── Order Summary Panel ─────────────────────────────────────────── */
+        .order-summary {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 100px;
+        }
+
+        .order-summary h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #f0f4f8;
+        }
+
+        .summary-product {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .summary-product-icon {
+            width: 54px;
+            height: 54px;
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #fff;
+            font-size: 22px;
+        }
+
+        .summary-product-name {
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 15px;
+        }
+
+        .summary-product-brand {
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 3px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f4f8;
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .summary-row.total {
+            border-bottom: none;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a2e;
+            padding-top: 16px;
+        }
+
+        .summary-row.total span:last-child {
+            color: #1a73e8;
+        }
+
+        .trust-badges {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .trust-badge i {
+            color: #10b981;
+            font-size: 16px;
+        }
+
+        /* ── Contact Form ────────────────────────────────────────────────── */
+        .checkout-form-panel {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        .checkout-form-panel h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 6px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            background: #f9fafb;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 3px rgba(26,115,232,0.12);
+            background: #fff;
+        }
+
+        .btn-pay {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #1a73e8, #1557b0);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .btn-pay:hover { opacity: 0.92; transform: translateY(-1px); }
+        .btn-pay:active { transform: translateY(0); }
+        .btn-pay:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+        .paytr-note {
+            text-align: center;
+            font-size: 12px;
+            color: #9ca3af;
+            margin-top: 14px;
+        }
+
+        .paytr-note a { color: #1a73e8; }
+
+        /* ── PayTR iFrame Modal ───────────────────────────────────────────── */
+        .paytr-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.72);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .paytr-overlay.active { display: flex; }
+
+        .paytr-modal {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+        }
+
+        .paytr-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            background: linear-gradient(135deg, #1a73e8, #1557b0);
+            color: #fff;
+        }
+
+        .paytr-modal-header h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .paytr-modal-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .paytr-modal-close:hover { background: rgba(255,255,255,0.35); }
+
+        #paytrIframe {
+            width: 100%;
+            flex: 1;
+            min-height: 500px;
+            border: none;
+        }
+
+        .paytr-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            gap: 16px;
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e5e7eb;
+            border-top-color: #1a73e8;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .error-msg {
+            color: #ef4444;
+            font-size: 13px;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .error-msg.visible { display: block; }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo_transparent.png" alt="Demozi Logo" class="logo-img" style="height: 45px;">
+                <div class="logo-text-container">
+                    <div class="logo-text">DEMOZİ COMPANY</div>
+                    <div class="logo-subtitle">General Trading Limited Liability Private Company</div>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links">
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="index.html#contact" class="btn btn-primary">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Checkout Body -->
+    <div class="checkout-wrapper">
+
+        <!-- Left: Order Summary -->
+        <div class="order-summary">
+            <h2><i class="fas fa-receipt" style="color:#1a73e8; margin-right:8px;"></i> Order Summary</h2>
+
+            <div class="summary-product">
+                <div class="summary-product-icon">
+                    <i class="fas fa-box-open"></i>
+                </div>
+                <div>
+                    <div class="summary-product-name" id="summaryProductName">Loading...</div>
+                    <div class="summary-product-brand" id="summaryProductBrand"></div>
+                </div>
+            </div>
+
+            <div class="summary-row">
+                <span>Unit Price</span>
+                <span id="summaryUnitPrice">—</span>
+            </div>
+            <div class="summary-row">
+                <span>Quantity</span>
+                <span>1</span>
+            </div>
+            <div class="summary-row">
+                <span>VAT (Included)</span>
+                <span>—</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="summaryTotal">—</span>
+            </div>
+
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>256-bit SSL encryption</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-lock"></i>
+                    <span>Secured by PayTR</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Visa, Mastercard, Troy accepted</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-undo"></i>
+                    <span><a href="refund.html">Refund Policy</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Contact & Pay Form -->
+        <div class="checkout-form-panel">
+            <h2><i class="fas fa-user-circle" style="color:#1a73e8; margin-right:8px;"></i> Your Details</h2>
+
+            <form id="checkoutForm" novalidate>
+                <div class="form-group">
+                    <label for="buyerName">Full Name *</label>
+                    <input type="text" id="buyerName" name="buyerName"
+                        placeholder="e.g. Ahmet Yıldız" required autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="buyerEmail">Email Address *</label>
+                    <input type="email" id="buyerEmail" name="buyerEmail"
+                        placeholder="e.g. ahmet@email.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="buyerPhone">Phone Number *</label>
+                    <input type="tel" id="buyerPhone" name="buyerPhone"
+                        placeholder="e.g. +90 539 661 9004" required autocomplete="tel">
+                </div>
+
+                <p class="error-msg" id="formError"></p>
+
+                <button type="submit" class="btn-pay" id="payBtn">
+                    <i class="fas fa-lock"></i>
+                    <span>Proceed to Secure Payment</span>
+                </button>
+
+                <p class="paytr-note">
+                    You will complete payment in a secure window powered by
+                    <a href="https://www.paytr.com" target="_blank">PayTR</a>.
+                    Your card details are never shared with us.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- PayTR iFrame Modal -->
+    <div class="paytr-overlay" id="paytrOverlay">
+        <div class="paytr-modal">
+            <div class="paytr-modal-header">
+                <h3><i class="fas fa-lock" style="margin-right:8px;"></i> Secure Payment — PayTR</h3>
+                <button class="paytr-modal-close" id="closePaytrModal" title="Close">×</button>
+            </div>
+            <div id="paytrLoadingState" class="paytr-loading">
+                <div class="spinner"></div>
+                <span>Connecting to payment gateway…</span>
+            </div>
+            <iframe id="paytrIframe"
+                src=""
+                frameborder="0"
+                scrolling="yes"
+                style="display:none;"
+                allow="payment">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span>© 2026 Demozi Kozmetik ve Makina Dış Ticaret Ltd. Şti. All rights reserved.</span>
+                &nbsp;|&nbsp;
+                <a href="terms.html" class="footer-link">Terms</a>
+                &nbsp;|&nbsp;
+                <a href="privacy.html" class="footer-link">Privacy</a>
+                &nbsp;|&nbsp;
+                <a href="refund.html" class="footer-link">Refunds</a>
+                &nbsp;|&nbsp;
+                <a href="mesafeli-satis.html" class="footer-link">Mesafeli Satış</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ─── Configuration ──────────────────────────────────────────────────
+        // Netlify Functions are at /.netlify/functions/ — no external server needed!
+        const BACKEND_URL = '';
+
+        // ─── Read Product from URL Params ───────────────────────────────────
+        const params = new URLSearchParams(window.location.search);
+        const productName  = params.get('product')  || 'Demozi Product';
+        const productBrand = params.get('brand')    || 'Demozi';
+        const productId    = params.get('id')       || '0';
+        const amount       = parseFloat(params.get('amount') || '0');
+        const currency     = params.get('currency') || 'TL';
+
+        // Populate summary
+        document.getElementById('summaryProductName').textContent = productName;
+        document.getElementById('summaryProductBrand').textContent = productBrand;
+
+        const currencySymbol = currency === 'TL' ? '₺' : (currency === 'USD' ? '$' : '€');
+        const formattedAmount = `${currencySymbol}${amount.toLocaleString('tr-TR', { minimumFractionDigits: 2 })}`;
+        document.getElementById('summaryUnitPrice').textContent = formattedAmount;
+        document.getElementById('summaryTotal').textContent = formattedAmount;
+
+        // ─── Form Submit ─────────────────────────────────────────────────────
+        const form    = document.getElementById('checkoutForm');
+        const payBtn  = document.getElementById('payBtn');
+        const errMsg  = document.getElementById('formError');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errMsg.classList.remove('visible');
+
+            const name  = document.getElementById('buyerName').value.trim();
+            const email = document.getElementById('buyerEmail').value.trim();
+            const phone = document.getElementById('buyerPhone').value.trim();
+
+            if (!name || !email || !phone) {
+                errMsg.textContent = 'Please fill in all required fields.';
+                errMsg.classList.add('visible');
+                return;
+            }
+
+            if (amount <= 0) {
+                errMsg.textContent = 'Invalid product price. Please go back and try again.';
+                errMsg.classList.add('visible');
+                return;
+            }
+
+            // Show modal with loading state
+            openPaytrModal();
+
+            payBtn.disabled = true;
+            payBtn.innerHTML = '<div class="spinner" style="width:22px;height:22px;border-width:3px;"></div> <span>Connecting…</span>';
+
+            try {
+                const response = await fetch('/api/create-payment', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, phone, amount, currency, productName, productId })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok || !data.iframe_token) {
+                    throw new Error(data.error || 'Could not connect to payment gateway.');
+                }
+
+                // Load PayTR iFrame
+                showPaytrIframe(data.iframe_token);
+
+            } catch (err) {
+                closePaytrModal();
+                errMsg.textContent = `Payment error: ${err.message}`;
+                errMsg.classList.add('visible');
+            } finally {
+                payBtn.disabled = false;
+                payBtn.innerHTML = '<i class="fas fa-lock"></i> <span>Proceed to Secure Payment</span>';
+            }
+        });
+
+        // ─── Modal Helpers ────────────────────────────────────────────────────
+        function openPaytrModal() {
+            const overlay = document.getElementById('paytrOverlay');
+            const iframe  = document.getElementById('paytrIframe');
+            const loading = document.getElementById('paytrLoadingState');
+            overlay.classList.add('active');
+            iframe.style.display  = 'none';
+            loading.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showPaytrIframe(token) {
+            const iframe  = document.getElementById('paytrIframe');
+            const loading = document.getElementById('paytrLoadingState');
+            iframe.src = `https://www.paytr.com/odeme/guvenli/${token}`;
+            iframe.onload = () => {
+                loading.style.display = 'none';
+                iframe.style.display  = 'block';
+            };
+        }
+
+        function closePaytrModal() {
+            const overlay = document.getElementById('paytrOverlay');
+            const iframe  = document.getElementById('paytrIframe');
+            overlay.classList.remove('active');
+            iframe.src = '';
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('closePaytrModal').addEventListener('click', closePaytrModal);
+
+        // Close on overlay click
+        document.getElementById('paytrOverlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('paytrOverlay')) closePaytrModal();
+        });
+
+        // ─── Listen for PayTR postMessage (payment result) ────────────────────
+        window.addEventListener('message', (event) => {
+            // PayTR sends { status: 'success' } or { status: 'failed' }
+            if (event.origin !== 'https://www.paytr.com') return;
+            const msg = event.data;
+            if (msg && msg.status === 'success') {
+                window.location.href = 'payment-success.html';
+            } else if (msg && msg.status === 'failed') {
+                window.location.href = 'payment-fail.html';
+            }
+        });
+
+        // ─── Mobile menu ──────────────────────────────────────────────────────
+        document.querySelector('.mobile-menu-btn')?.addEventListener('click', () => {
+            document.querySelector('.nav-links')?.classList.toggle('active');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar')?.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+
+</html>
