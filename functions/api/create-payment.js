@@ -8,7 +8,7 @@ export async function onRequestPost({ request, env }) {
     // CORS headers — allow your site to call this function
     const headers = {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://demozi.com',
+        'Access-Control-Allow-Origin': 'https://www.demozi.com',
         'Access-Control-Allow-Methods': 'POST',
         'Access-Control-Allow-Headers': 'Content-Type',
     };
@@ -35,7 +35,7 @@ export async function onRequestPost({ request, env }) {
         const MERCHANT_ID   = env.PAYTR_MERCHANT_ID;
         const MERCHANT_KEY  = env.PAYTR_MERCHANT_KEY;
         const MERCHANT_SALT = env.PAYTR_MERCHANT_SALT;
-        const SITE_URL      = 'https://demozi.com';
+        const SITE_URL      = 'https://www.demozi.com';
 
         if (!MERCHANT_ID || !MERCHANT_KEY || !MERCHANT_SALT) {
             return new Response(
@@ -137,7 +137,7 @@ export async function onRequestOptions() {
     return new Response(null, {
         status: 204,
         headers: {
-            'Access-Control-Allow-Origin': 'https://demozi.com',
+            'Access-Control-Allow-Origin': 'https://www.demozi.com',
             'Access-Control-Allow-Methods': 'POST, OPTIONS',
             'Access-Control-Allow-Headers': 'Content-Type',
         },
