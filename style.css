@@ -26,8 +26,8 @@ Design System - Mega Standard
     --brand-yellow: #F97316;
 
     /* Typography */
-    --font-heading: 'Noto Naskh Arabic', 'Inter', 'Roboto', 'Arial', sans-serif;
-    --font-main: 'Noto Naskh Arabic', 'Inter', 'Roboto', 'Segoe UI', sans-serif;
+    --font-heading: 'Inter', 'Roboto', 'Arial', sans-serif;
+    --font-main: 'Inter', 'Roboto', 'Segoe UI', sans-serif;
 
     /* Structural Flat Design */
     --border-outset: 1px solid #E5E7EB;
@@ -77,18 +77,11 @@ html[dir="rtl"] .logo {
     flex-direction: row-reverse;
 }
 
-/* RTL: fix logo image margin so there is no gap */
-html[dir="rtl"] .logo-img {
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-}
-
 /* RTL: Move logo to the right side */
 html[dir="rtl"] .nav-container {
     flex-direction: row-reverse;
 }
 
-/* RTL desktop: reverse nav links row */
 html[dir="rtl"] .nav-links {
     flex-direction: row-reverse;
 }
@@ -100,6 +93,8 @@ html[dir="rtl"] .lang-switcher {
 html[dir="rtl"] .feature-list li {
     flex-direction: row-reverse;
 }
+
+/* End RTL */
 
 /* End RTL */
 
@@ -258,7 +253,7 @@ Navigation
 .logo-text {
     font-size: 1.25rem;
     font-weight: bold;
-    font-family: 'Noto Naskh Arabic', 'Tahoma', sans-serif;
+    font-family: 'Tahoma', sans-serif;
     color: #FFFFFF;
     text-shadow: 1px 1px 2px #000;
     line-height: 1.1;
@@ -267,8 +262,8 @@ Navigation
 .logo-subtitle {
     font-size: 0.65rem;
     color: rgba(255, 255, 255, 0.75);
-    font-family: 'Noto Naskh Arabic', 'Tahoma', sans-serif;
-    margin-top: 0;
+    font-family: 'Tahoma', sans-serif;
+    margin-top: 2px;
 }
 
 .nav-links {
@@ -610,13 +605,9 @@ Responsive
         padding: 15px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         z-index: 1000;
-        overflow: visible;
     }
 
-    /* RTL mobile: keep column direction, align items to the right */
     html[dir="rtl"] .nav-links {
-        flex-direction: column;
-        align-items: flex-end;
         left: 0;
         right: 0;
     }
@@ -651,7 +642,6 @@ Responsive
     html[dir="rtl"] .dropdown-content {
         padding-left: 0;
         padding-right: 15px;
-        text-align: right;
     }
 
     .dropdown:hover .dropdown-content {
@@ -664,16 +654,6 @@ Responsive
         border-left: none;
         margin-top: 10px;
         justify-content: flex-start;
-    }
-
-    /* RTL mobile: language switcher right-aligned and visible */
-    html[dir="rtl"] .lang-switcher {
-        justify-content: flex-end;
-        margin-right: 0;
-        padding-right: 0;
-        border-right: none;
-        margin-top: 10px;
-        flex-direction: row;
     }
 
     .mobile-menu-btn {
@@ -767,29 +747,6 @@ textarea.form-control {
     padding: 40px 0;
     font-size: 14px;
     color: #9CA3AF;
-}
-
-.policy-hero,
-.policy-hero h1,
-.policy-hero .h1-sub,
-.policy-hero .last-updated {
-    color: #FFFFFF !important;
-}
-
-.footer-link {
-    color: #FFFFFF;
-    text-decoration: underline;
-    font-weight: 500;
-    opacity: 0.9;
-    padding: 4px 8px;
-    transition: all 0.2s;
-    border-radius: 4px !important;
-}
-
-.footer-link:hover {
-    color: var(--win-blue-light);
-    opacity: 1;
-    background: rgba(255,255,255,0.1);
 }
 
 /* 
@@ -1035,130 +992,3 @@ Product Detail Pages
     border-left: 4px solid var(--win-blue-light);
     color: var(--text-secondary);
 }
-
-/* 
-========================================
-Product Showcase / Collage Section
-========================================
-*/
-.products-showcase {
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--win-border-light);
-    border-bottom: 1px solid var(--win-border-light);
-}
-
-.product-collage {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 12px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-}
-
-.product-collage::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
-}
-
-.collage-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px !important;
-    border: 1px solid var(--win-border-light);
-    background: #f0f0f0;
-    cursor: pointer;
-    flex: 0 0 220px;
-    height: 220px;
-    scroll-snap-align: start;
-}
-
-/* Remove grid span classes — all items are now equal size */
-.collage-item.collage-large,
-.collage-item.collage-wide,
-.collage-item.collage-tall {
-    flex: 0 0 220px;
-    height: 220px;
-}
-
-.collage-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-    display: block;
-}
-
-.collage-item:hover img {
-    transform: scale(1.07);
-}
-
-.collage-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(17, 24, 39, 0.85) 0%, transparent 100%);
-    color: #FFFFFF;
-    padding: 20px 14px 12px;
-    transform: translateY(100%);
-    transition: transform 0.35s ease;
-}
-
-.collage-item:hover .collage-overlay {
-    transform: translateY(0);
-}
-
-.collage-overlay span {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    color: #FFFFFF;
-    text-shadow: 1px 1px 4px rgba(0,0,0,1);
-}
-
-/* Fade indicator on right edge to hint scrollability */
-.products-showcase .container {
-    position: relative;
-}
-
-.products-showcase .container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 2rem;
-    width: 60px;
-    height: 100%;
-    background: linear-gradient(to right, transparent, var(--bg-secondary));
-    pointer-events: none;
-    z-index: 2;
-}
-
-.showcase-cta {
-    text-align: center;
-    margin-top: 2.5rem;
-}
-
-/* Responsive: slightly smaller on mobile */
-@media (max-width: 768px) {
-    .collage-item,
-    .collage-item.collage-large,
-    .collage-item.collage-wide,
-    .collage-item.collage-tall {
-        flex: 0 0 170px;
-        height: 170px;
-    }
-}
-
-@media (max-width: 480px) {
-    .collage-item,
-    .collage-item.collage-large,
-    .collage-item.collage-wide,
-    .collage-item.collage-tall {
-        flex: 0 0 140px;
-        height: 140px;
-    }
-}
-

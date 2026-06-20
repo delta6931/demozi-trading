@@ -29,11 +29,6 @@ const translations = {
         hero_btn_industrial: "Explore Catalog",
         hero_btn_cosmetics: "Contact Sales",
 
-        featured_badge: "In Our Inventory",
-        featured_title: "Products From Our Inventory",
-        featured_subtitle: "Real items from our stock — ready for delivery across the Middle East.",
-        featured_cta: "View Full Catalog →",
-
         about_title: "Who We Are",
         about_p1: "Demozi is a specialized supplier of premier industrial automation components, ensuring factories and manufacturing plants operate at maximum efficiency. Based in the Middle East, our technical team works closely with engineers to source critical parts.",
         about_p2: "We focus entirely on high-quality sensors, vibration monitoring, cables, and process intelligence tools to keep your production lines moving without interruption.",
@@ -66,7 +61,7 @@ const translations = {
         div_log_f3: "Mounting Adaptors",
 
         contact_title: "Contact Us",
-        contact_subtitle: "Reach out to our office in Istanbul, Turkey.",
+        contact_subtitle: "Reach out to our offices in Istanbul and Kirkuk.",
         contact_form_legend: "Send a Message",
         contact_name: "Name:",
         contact_email: "Email:",
@@ -75,22 +70,17 @@ const translations = {
         contact_info_title: "Office Information",
         contact_hq: "Headquarters:",
         contact_branch: "Regional Office:",
-        contact_address_ist: "Parliamenterler Sitesi, Adnan Kahveci Mah., Beylikdüzü, İstanbul 34520, Turkey",
+        contact_address_ist: "Istanbul, Turkey",
         contact_address_irq: "Baghdad road, Kirkuk, Iraq, 36001",
         contact_phone: "Phone:",
-        footer_text: "© 2026 Demozi Kozmetik ve Makina Dış Ticaret Ltd. Şti. All rights reserved.",
+        footer_text: "\u00A9 2024 Demozi. All rights reserved.",
 
         brands_page_title: "Demozi | Our Brand Partners",
         brands_heading_main: "Our Brand Partners",
         brands_subtitle: "We are proud to distribute and work alongside the following industry-leading global brands in automation, coding, and cosmetics.",
 
-        logo_text: "DEMOZİ",
-        logo_subtitle: "Kozmetik ve Makina Dış Ticaret Ltd. Şti.",
-
-        products_heading: "Demozi Catalog",
-        products_subtitle: "Browse our extensive selection of industrial equipment and technical solutions. Use the WhatsApp button on any product to instantly connect with our sales team for a custom quotation.",
-
-        brands_hero_subtitle: "Demozi partners with the world\u2019s leading industrial manufacturers to bring you unmatched quality, reliability, and precision engineering."
+        logo_text: "DEMOZI COMPANY",
+        logo_subtitle: "General Trading Limited Liability Private Company"
     },
     tr: {
         nav_about: "Hakkımızda",
@@ -101,89 +91,79 @@ const translations = {
         nav_safety: "Güvenlik Çözümleri",
         nav_cosmetics: "Kozmetik & Güzellik",
         nav_logistics: "İhracat & Lojistik",
-        nav_partners: "İş Ortaklarımız",
+        nav_partners: "Ortaklarımız",
         nav_products: "Ürünler",
-        nav_contact: "İletişim",
+        nav_contact: "Bize Ulaşın",
         nav_trademarks: "Markalar",
         nav_brands: "Markalar",
         nav_all_products: "Tüm Ürünler",
         nav_industrial_equip: "Endüstriyel Sensörler",
-        full_catalog: "Tam Katalog",
+        full_catalog: "Tüm Ürünler",
         spare_parts: "Yedek Parça",
         hero_title: "Genel Ticaret Ltd. Şti.",
         search_label: "Katalogda Ara:",
         search_placeholder: "örn. AECO FT13-CF NPN...",
 
-        hero_badge: "Türkiye merkezli küresel tedarik çözümleri",
+        hero_badge: "2012'den beri Türkiye ve Irak'ı birbirine bağlıyoruz",
         hero_title_1: "Güvenilir",
         hero_title_2: "Otomasyon ve Sensör",
         hero_title_3: "Tedarikçiniz",
-        hero_subtitle: "Dünya genelindeki önde gelen markalardan yüksek performanslı endüstriyel bileşenler, titreşim probları ve akıllı sensörler tedarik ediyoruz.",
-        hero_btn_industrial: "Kataloğu Keşfet",
-        hero_btn_cosmetics: "Satış Ekibiyle İletişime Geç",
-
-        featured_badge: "Stoğumuzdan",
-        featured_title: "Stoktan Ürünler",
-        featured_subtitle: "Gerçek stoğumuzdaki ürünler — hızlı teslimat için hazır.",
-        featured_cta: "Tam Kataloğu Görüntüle →",
+        hero_subtitle: "Hassas endüstriyel markalama ekipmanlarından premium Avrupa kozmetiklerine, sınırların ötesinde mükemmellik sunuyoruz.",
+        hero_btn_industrial: "Katalogu Keşfet",
+        hero_btn_cosmetics: "Satış İletişimi",
 
         about_title: "Biz Kimiz",
-        about_p1: "Demozi, fabrikaların ve üretim tesislerinin maksimum verimlilikle çalışmasını sağlayan, uzmanlaşmış bir endüstriyel otomasyon bileşenleri tedarikçisidir. İstanbul merkezli teknik ekibimiz, mühendislerle yakın iş birliği içinde kritik parçaları temin etmektedir.",
-        about_p2: "Üretim hatlarınızın kesintisiz çalışmasını sağlamak için yalnızca yüksek kaliteli sensörler, titreşim izleme sistemleri, kablolar ve proses zekası araçlarına odaklanıyoruz.",
+        about_p1: "2012'de kurulan Demozi, Türkiye, Avrupa ve Irak pazarlarını birleştiren on yılı aşkın deneyime sahiptir. İstanbul ve Kerkük'te faaliyet gösteren uzman ekibimiz, dünyaca ünlü markaların özel distribütörlüğünü yönetmektedir.",
+        about_p2: "Ağır makine ve kodlama sistemleri tedarikinden, tam kapsamlı lojistik yönetimi ve premium kozmetik perakendesine kadar eksiksiz çözümler sunmaktan gurur duyuyoruz.",
         stat_1_val: "400+",
-        stat_1_text: "Stokta Ürün",
+        stat_1_text: "Stoktaki Ürün",
         stat_2_val: "Hızlı",
         stat_2_text: "Bölgesel Teslimat",
         stat_3_val: "Premium",
         stat_3_text: "Küresel Markalar",
 
-        div_title: "Ürün Odak Alanlarımız",
-        div_subtitle: "Birinci sınıf endüstriyel bileşenler sunan uzman kadromuzla hizmetinizdeyiz.",
+        div_title: "Ürün Odaklığımız",
+        div_subtitle: "Birinci sınıf endüstriyel bileşenler sunan uzman bilgisi.",
 
         div_ind_title: "Endüktif & Fotoelektrik Sensörler",
-        div_ind_desc: "IFM ve SICK gibi güvenilir markalarla iş birliği yaparak, farklı üretim ortamlarındaki nesne algılama ihtiyaçlarınız için yüksek hassasiyetli sensörler sunuyoruz.",
+        div_ind_desc: "IFM ve SICK gibi markalara güvenerek, çeşitli üretim ortamlarında nesne tespiti için yüksek hassasiyetli sensörler sunuyoruz.",
         div_ind_f1: "Endüktif Sensörler",
-        div_ind_f2: "Reflektörlü Fotoelektrik Sensörler",
+        div_ind_f2: "Yansıtıcılı Fotoelektrikler",
         div_ind_f3: "Kontrast Sensörleri",
 
         div_cos_title: "Titreşim & Yakınlık İzleme",
-        div_cos_desc: "Parker Meggitt'in piezoelektrik ivmeölçerleri, yakınlık probları ve durum izleme modülleri ile ağır makinelerinizi güvence altına alın.",
-        div_cos_f1: "Yakınlık Probları (TQ Serisi)",
+        div_cos_desc: "Parker Meggitt'ten piezo-elektrik ivmeölçerler, yakınlık probları ve durum izleme modülleri ile ağır makinelerinizi koruyun.",
+        div_cos_f1: "Yakınlık Probları (TQ serisi)",
         div_cos_f2: "Piezoelektrik Sensörler",
-        div_cos_f3: "VM600 Durum İzleme Rafları",
+        div_cos_f3: "VM600 İzleme Modülleri",
 
         div_log_title: "Sinyal Koşullandırıcılar & Aksesuarlar",
-        div_log_desc: "Endüstriyel ağ malzemelerimiz, yüksek sıcaklığa dayanıklı kablolarımız ve bağlantı kutularımız ile temiz veri iletimi ve güvenilir güç teslimatı sağlıyoruz.",
+        div_log_desc: "Endüstriyel ağ malzemelerimiz, yüksek sıcaklık kabloları ve dağıtım kutuları ile temiz veri iletimi ve güvenilir güç dağıtımı sağlıyoruz.",
         div_log_f1: "Sinyal Koşullandırıcılar",
         div_log_f2: "Uzatma Kabloları",
         div_log_f3: "Montaj Adaptörleri",
 
-        contact_title: "İletişim",
-        contact_subtitle: "İstanbul ofisimizle iletişime geçin.",
-        contact_form_legend: "Mesaj Gönderin",
-        contact_name: "Adınız:",
+        contact_title: "Bize Ulaşın",
+        contact_subtitle: "İstanbul ve Kerkük ofislerimizle iletişime geçin.",
+        contact_form_legend: "Mesaj Gönder",
+        contact_name: "İsim:",
         contact_email: "E-posta:",
-        contact_message: "Mesajınız:",
+        contact_message: "Mesaj:",
         contact_submit: "Gönder",
         contact_info_title: "Ofis Bilgileri",
         contact_hq: "Genel Merkez:",
         contact_branch: "Bölge Ofisi:",
-        contact_address_ist: "Parliamenterler Sitesi, Adnan Kahveci Mah., Beylikdüzü, İstanbul 34520, Türkiye",
-        contact_address_irq: "Bağdat Caddesi, Kerkük, Irak, 36001",
+        contact_address_ist: "İstanbul, Türkiye",
+        contact_address_irq: "Bağdat yolu, Kerkük, Irak, 36001",
         contact_phone: "Telefon:",
-        footer_text: "© 2026 Demozi Kozmetik ve Makina Dış Ticaret Ltd. Şti. Tüm hakları saklıdır.",
+        footer_text: "\u00A9 2024 Demozi. Tüm hakları saklıdır.",
 
         brands_page_title: "Demozi | Marka Ortaklarımız",
         brands_heading_main: "Marka Ortaklarımız",
-        brands_subtitle: "Otomasyon, kodlama ve kozmetik sektörlerindeki endüstri lideri küresel markaları dağıtmaktan ve bu markalarla iş birliği yapmaktan gurur duyuyoruz.",
+        brands_subtitle: "Otomasyon, kodlama ve kozmetik sektörlerinde endüstri lideri global markaların distribütörlüğünü yapmaktan ve onlarla çalışmaktan gurur duyuyoruz.",
 
-        logo_text: "DEMOZİ",
-        logo_subtitle: "Kozmetik ve Makina Dış Ticaret Ltd. Şti.",
-
-        products_heading: "Demozi Kataloğu",
-        products_subtitle: "Geniş endüstriyel ekipman ve teknik çözüm yelpazemizi inceleyin. Özel fiyat teklifi almak için herhangi bir üründeki WhatsApp butonuna tıklayarak satış ekibimizle anında iletişime geçebilirsiniz.",
-
-        brands_hero_subtitle: "Demozi, size eşsiz kalite, güvenilirlik ve hassas mühendislik sunabilmek için dünyanın önde gelen endüstriyel üreticileriyle iş birliği yapmaktadır."
+        logo_text: "DEMOZİ ŞİRKETİ",
+        logo_subtitle: "Genel Ticaret Limited Şirketi"
     },
     ar: {
         nav_about: "من نحن",
@@ -214,11 +194,6 @@ const translations = {
         hero_subtitle: "من معدات الترميز الصناعية الدقيقة إلى مستحضرات التجميل الأوروبية المميزة، نقدم التميز عبر الحدود.",
         hero_btn_industrial: "استكشف الكتالوج",
         hero_btn_cosmetics: "تواصل مع المبيعات",
-
-        featured_badge: "من مخزوننا",
-        featured_title: "منتجات من مخزوننا",
-        featured_subtitle: "منتجات حقيقية من مخزوننا — جاهزة للتسليم في جميع أنحاء الشرق الأوسط.",
-        featured_cta: "عرض الكتالوج الكامل →",
 
         about_title: "من نحن",
         about_p1: "تأسست شركة ديموزي عام 2012، ولديها أكثر من عقد من الخبرة في ربط أسواق تركيا وأوروبا والعراق. يعمل فريقنا المتخصص من مدينتي إسطنبول وكركوك ويدير التوزيع الحصري لعلامات تجارية عالمية شهيرة.",
@@ -252,7 +227,7 @@ const translations = {
         div_log_f3: "محولات التركيب",
 
         contact_title: "اتصل بنا",
-        contact_subtitle: "تواصل مع مكتبنا في إسطنبول، تركيا.",
+        contact_subtitle: "تواصل مع مكاتبنا في إسطنبول وكركوك.",
         contact_form_legend: "إرسال رسالة",
         contact_name: "الاسم:",
         contact_email: "البريد الإلكتروني:",
@@ -261,22 +236,17 @@ const translations = {
         contact_info_title: "معلومات المكتب",
         contact_hq: "المقر الرئيسي:",
         contact_branch: "المكتب الإقليمي:",
-        contact_address_ist: "Parliamenterler Sitesi, Adnan Kahveci Mah., Beylikdüzü, İstanbul 34520, Türkiye",
+        contact_address_ist: "إسطنبول، تركيا",
         contact_address_irq: "طريق بغداد، كركوك، العراق، 36001",
         contact_phone: "الهاتف:",
-        footer_text: "© 2026 Demozi Kozmetik ve Makina Dış Ticaret Ltd. Şti. جميع الحقوق محفوظة.",
+        footer_text: "\u00A9 2024 ديموزي. جميع الحقوق محفوظة.",
 
         brands_page_title: "ديموزي | شركاء علاماتنا التجارية",
         brands_heading_main: "شركاء علاماتنا التجارية",
         brands_subtitle: "نفخر بتوزيع والعمل جنباً إلى جنب مع العلامات التجارية العالمية الرائدة في مجال الأتمتة والتشفير ومستحضرات التجميل.",
 
-        logo_text: "DEMOZİ",
-        logo_subtitle: "Kozmetik ve Makina Dış Ticaret Ltd. Şti.",
-
-        products_heading: "كتالوج ديموزي",
-        products_subtitle: "تصفح مجموعتنا الواسعة من المعدات الصناعية والحلول التقنية. استخدم زر واتساب على أي منتج للتواصل الفوري مع فريق مبيعاتنا للحصول على عرض سعر مخصص.",
-
-        brands_hero_subtitle: "تتشارك ديموزي مع كبار المصنعين الصناعيين في العالم لتقديم جودة وموثوقية وهندسة دقيقة لا مثيل لها."
+        logo_text: "شركة ديموزي",
+        logo_subtitle: "شركة تجارة عامة ذات مسؤولية محدودة"
     }
 };
 
