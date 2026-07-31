@@ -1,22 +1,62 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import { useQuote } from '../../context/QuoteContext';
-import { MapPin, Mail, Phone, Send, CheckCircle2 } from 'lucide-react';
+import { MapPin, Mail, Phone, Send, CheckCircle2, FileText } from 'lucide-react';
 
 export const ContactSection = () => {
   const { t } = useLanguage();
   const { quoteItems, clearQuote } = useQuote();
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
 
-  const handleSubmit = (e) => {
+  const companyEmail = "info@demozi.com";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      if (quoteItems.length > 0) clearQuote();
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 4000);
+    setLoading(true);
+
+    const messageText = quoteItems.length > 0
+      ? `${formData.message}\n\nSelected Products:\n${quoteItems.map(i => `- [${i.brand || 'DEMOZI'}] ${i.name} (Qty: ${i.quantity})`).join('\n')}`
+      : formData.message;
+
+    try {
+      // Send directly to info@demozi.com via FormSubmit free endpoint
+      await fetch(`https://formsubmit.co/ajax/${companyEmail}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          _subject: `DEMOZİ Web Teklif Talebi - ${formData.name}`,
+          Form_Name: formData.name,
+          Email: formData.email,
+          Phone: formData.phone,
+          Message: messageText
+        })
+      });
+    } catch (err) {
+      // Fallback: mailto link if offline
+      const mailtoUrl = `mailto:${companyEmail}?subject=${encodeURIComponent(`DEMOZİ Teklif Talebi - ${formData.name}`)}&body=${encodeURIComponent(`Ad Soyad / Firma: ${formData.name}\nTelefon: ${formData.phone}\nE-posta: ${formData.email}\n\nMesaj / Ürünler:\n${messageText}`)}`;
+      window.location.href = mailtoUrl;
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        if (quoteItems.length > 0) clearQuote();
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      }, 5000);
+    }
+  };
+
+  const handleWhatsAppClick = () => {
+    const messageText = quoteItems.length > 0
+      ? `Merhaba DEMOZİ Satış Ekibi,\n\nTeklif almak istediğim ürünler:\n${quoteItems.map((i, idx) => `${idx + 1}. [${i.brand || 'DEMOZI'}] ${i.name} (Adet: ${i.quantity})`).join('\n')}\n\nAd Soyad / Firma: ${formData.name || 'Müşteri'}\nTelefon: ${formData.phone || 'N/A'}`
+      : `Merhaba DEMOZİ Satış Ekibi,\n\n${formData.message || 'Ürün kataloğu ve fiyat teklifi hakkında bilgi almak istiyorum.'}\n\nAd Soyad / Firma: ${formData.name || 'Müşteri'}`;
+
+    window.open(`https://wa.me/905396619004?text=${encodeURIComponent(messageText)}`, '_blank');
   };
 
   return (
@@ -40,7 +80,7 @@ export const ContactSection = () => {
               {t('contact_subtitle')}
             </p>
 
-            {/* Offices - Darker Slate Cards */}
+            {/* Offices */}
             <div className="space-y-3 pt-2 font-sans">
               <div className="p-3.5 rounded-xl bg-[#F1F5F9] border-2 border-[#CBD5E1] flex items-start gap-3 text-xs shadow-xs">
                 <MapPin className="w-4 h-4 text-[#3A8899] shrink-0 mt-0.5" />
@@ -72,7 +112,7 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          {/* Right Form Column - Dark Slate Contrast Container */}
+          {/* Right Form Column */}
           <div className="lg:col-span-7 bg-[#0F172A] border border-[#334155] rounded-2xl p-6 sm:p-8 shadow-2xl text-white">
             <h3 className="text-lg font-bold text-white mb-4 font-display flex items-center justify-between">
               <span>{t('contact_title')}</span>
@@ -87,7 +127,9 @@ export const ContactSection = () => {
               <div className="p-6 text-center space-y-2 bg-emerald-950/80 border border-emerald-500/40 rounded-xl text-emerald-200 font-sans">
                 <CheckCircle2 className="w-10 h-10 mx-auto text-emerald-400" />
                 <h4 className="font-bold text-base">{t('rfq_sent_success')}</h4>
-                <p className="text-xs text-emerald-300">{t('rfq_sent_desc')}</p>
+                <p className="text-xs text-emerald-300">
+                  Mesajınız <strong>info@demozi.com</strong> adresimize iletilmiştir. Temsilcilerimiz en kısa sürede sizinle iletişime geçecektir.
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3.5 text-xs font-sans">
@@ -99,7 +141,7 @@ export const ContactSection = () => {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Ahmet Yilmaz"
+                      placeholder="Ahmet Yılmaz / Firma Unvanı"
                       className="w-full bg-[#1E293B] border border-[#334155] rounded-lg px-3 py-2 text-white outline-none focus:border-[#52B5C9]"
                     />
                   </div>
@@ -137,20 +179,32 @@ export const ContactSection = () => {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder={
                       quoteItems.length > 0
-                        ? `Selected items:\n${quoteItems.map((i) => `- ${i.name} (Qty: ${i.quantity})`).join('\n')}`
-                        : 'List required products or inquiry...'
+                        ? `Talep edilen ürünler:\n${quoteItems.map((i) => `- ${i.name} (Adet: ${i.quantity})`).join('\n')}`
+                        : 'İstediğiniz ürün kodlarını ve mesajınızı yazınız...'
                     }
                     className="w-full bg-[#1E293B] border border-[#334155] rounded-lg px-3 py-2 text-white outline-none focus:border-[#52B5C9] text-xs font-mono"
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full py-3 rounded-lg bg-[#3A8899] hover:bg-[#2B6F7E] text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md font-sans"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>{t('submit_inquiry')}</span>
-                </button>
+                <div className="pt-2 flex flex-col sm:flex-row gap-2">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="flex-1 py-3 rounded-lg bg-[#3A8899] hover:bg-[#2B6F7E] text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md font-sans disabled:opacity-50"
+                  >
+                    <Send className="w-4 h-4" />
+                    <span>{loading ? 'Gönderiliyor...' : t('submit_inquiry')}</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleWhatsAppClick}
+                    className="flex-1 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md font-sans"
+                  >
+                    <FileText className="w-4 h-4" />
+                    <span>WhatsApp ile Gönder (+90 539 661 9004)</span>
+                  </button>
+                </div>
               </form>
             )}
           </div>
