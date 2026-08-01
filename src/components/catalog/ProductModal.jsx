@@ -1,8 +1,10 @@
 import React from 'react';
 import { useQuote } from '../../context/QuoteContext';
+import { useLanguage } from '../../context/LanguageContext';
 import { X, CheckCircle2, ShieldCheck, Plus, Check, Tag } from 'lucide-react';
 
 export const ProductModal = ({ product, onClose }) => {
+  const { t } = useLanguage();
   const { addToQuote, quoteItems } = useQuote();
   if (!product) return null;
 
@@ -52,7 +54,7 @@ export const ProductModal = ({ product, onClose }) => {
 
             {/* Description */}
             <div className="p-3 rounded bg-[#F8FAFC] border border-[#E2E8F0] text-xs text-[#475569] space-y-1.5 max-h-36 overflow-y-auto">
-              <h4 className="font-bold text-[#0F172A] text-[11px] uppercase font-mono tracking-wider">Specifications:</h4>
+              <h4 className="font-bold text-[#0F172A] text-[11px] uppercase font-mono tracking-wider">{t('quick_specs')}:</h4>
               {product.description ? (
                 <div
                   dangerouslySetInnerHTML={{ __html: product.description }}
@@ -63,17 +65,17 @@ export const ProductModal = ({ product, onClose }) => {
               )}
             </div>
 
-            {/* Badges */}
+            {/* Badges Translated */}
             <div className="flex items-center gap-3 text-[11px] text-[#64748B]">
               <span className="flex items-center gap-1 text-emerald-700 font-semibold">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Ready to Dispatch
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> {t('ready_to_dispatch')}
               </span>
               <span className="flex items-center gap-1 text-[#3A8899] font-semibold">
-                <ShieldCheck className="w-3.5 h-3.5" /> Official Warranty
+                <ShieldCheck className="w-3.5 h-3.5" /> {t('guarantee_1')}
               </span>
             </div>
 
-            {/* Action Buttons */}
+            {/* Action Buttons Translated */}
             <div className="pt-2">
               <button
                 onClick={() => {
@@ -85,7 +87,7 @@ export const ProductModal = ({ product, onClose }) => {
                 }`}
               >
                 {isInQuote ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                <span>{isInQuote ? 'Item in RFQ Basket' : '+ Add to Quote Inquiry Basket'}</span>
+                <span>{isInQuote ? t('added_to_rfq') : t('add_to_rfq')}</span>
               </button>
             </div>
 

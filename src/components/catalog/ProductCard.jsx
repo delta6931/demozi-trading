@@ -1,8 +1,10 @@
 import React from 'react';
 import { useQuote } from '../../context/QuoteContext';
+import { useLanguage } from '../../context/LanguageContext';
 import { Eye, Plus, Check, Tag } from 'lucide-react';
 
 export const ProductCard = ({ product, onQuickView }) => {
+  const { t } = useLanguage();
   const { addToQuote, quoteItems } = useQuote();
   const isInQuote = quoteItems.some((item) => item.id === product.id);
 
@@ -26,9 +28,9 @@ export const ProductCard = ({ product, onQuickView }) => {
             {product.brand || 'DEMOZI'}
           </span>
 
-          {/* Stock Badge */}
+          {/* Stock Badge Translated */}
           <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300 text-[9px] font-bold font-sans">
-            Ready to Dispatch
+            {t('ready_to_dispatch')}
           </span>
         </div>
 
@@ -49,14 +51,14 @@ export const ProductCard = ({ product, onQuickView }) => {
         )}
       </div>
 
-      {/* Actions */}
+      {/* Actions Translated */}
       <div className="pt-3 border-t border-[#CBD5E1] flex items-center gap-2 font-sans">
         <button
           onClick={() => onQuickView(product)}
           className="flex-1 py-1.5 rounded bg-white hover:bg-[#E2E8F0] text-[#0F172A] text-[11px] font-bold flex items-center justify-center gap-1 transition-colors border border-[#CBD5E1] shadow-xs"
         >
           <Eye className="w-3.5 h-3.5" />
-          <span>Specs</span>
+          <span>{t('quick_specs')}</span>
         </button>
 
         <button
@@ -70,12 +72,12 @@ export const ProductCard = ({ product, onQuickView }) => {
           {isInQuote ? (
             <>
               <Check className="w-3.5 h-3.5" />
-              <span>Added</span>
+              <span>{t('item_added')}</span>
             </>
           ) : (
             <>
               <Plus className="w-3.5 h-3.5" />
-              <span>+ RFQ</span>
+              <span>{t('add_rfq')}</span>
             </>
           )}
         </button>

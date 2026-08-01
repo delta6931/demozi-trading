@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { useQuote } from '../../context/QuoteContext';
 import { productsData } from '../../data/productsData';
@@ -37,6 +37,13 @@ export const Hero = () => {
   const currentProd = heroProducts[currentSlide];
   const isInQuote = quoteItems.some((item) => item.id === currentProd?.id);
 
+  const searchChips = [
+    { key: 'cat_cosmetics', query: 'Cosmetics' },
+    { key: 'cat_machinery', query: 'Machinery Equipment' },
+    { key: 'cat_industrial_parts', query: 'Industrial Parts' },
+    { key: 'cat_logistics', query: 'Customs Logistics' }
+  ];
+
   return (
     <section className="pt-28 pb-16 bg-[#F8FAFC] border-b border-[#CBD5E1] relative overflow-hidden">
       {/* Background Decorative Subtle Gradients */}
@@ -50,17 +57,14 @@ export const Hero = () => {
           {/* Left Column: Hero Headlines & Search */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Clean Main Headline (No Pill Badge & No Underline Line) */}
+            {/* Main Headline Translated 100% */}
             <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-tight font-display">
-              International Trade & <br />
-              <span className="text-[#3A8899]">
-                Machinery Equipment Supply
-              </span> <br />
-              Across Turkey & Iraq
+              {t('hero_title_main')} <br />
+              <span className="text-[#3A8899]">{t('hero_title_sub')}</span>
             </h1>
 
             <p className="text-sm sm:text-base text-[#475569] max-w-xl leading-relaxed font-sans font-medium">
-              Official registered trading enterprise connecting Istanbul headquarters and Kirkuk regional branch for premium cosmetics, industrial machinery hardware, and cross-border logistics.
+              {t('hero_subtitle')}
             </p>
 
             {/* Search Box */}
@@ -87,38 +91,38 @@ export const Hero = () => {
                 </button>
               </div>
 
-              {/* Suggestions Chips */}
+              {/* Suggestions Chips Translated */}
               <div className="flex flex-wrap items-center gap-2 mt-3 text-[11px] text-[#64748B] font-sans">
                 <span className="font-bold text-[#0F172A]">{t('popular_searches')}</span>
-                {['Cosmetics', 'Machinery Equipment', 'Industrial Parts', 'Customs Logistics'].map((item) => (
+                {searchChips.map((item) => (
                   <button
-                    key={item}
+                    key={item.key}
                     type="button"
                     onClick={() => {
-                      setQuery(item);
-                      navigate(`/products?search=${encodeURIComponent(item)}`);
+                      setQuery(t(item.key));
+                      navigate(`/products?search=${encodeURIComponent(item.query)}`);
                     }}
                     className="px-2.5 py-1 rounded bg-[#E2E8F0] hover:bg-[#CBD5E1] border border-[#CBD5E1] text-[#0F172A] font-bold transition-colors shadow-xs"
                   >
-                    {item}
+                    {t(item.key)}
                   </button>
                 ))}
               </div>
             </form>
 
-            {/* Trust Badges */}
+            {/* Trust Badges Translated */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-[#CBD5E1] text-xs text-[#475569] font-sans font-semibold">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#3A8899] shrink-0" />
-                <span>100% Registered Entity</span>
+                <span>{t('guarantee_1')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Truck className="w-4 h-4 text-[#3A8899] shrink-0" />
-                <span>Istanbul & Kirkuk Line</span>
+                <span>{t('guarantee_2')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <FileText className="w-4 h-4 text-[#3A8899] shrink-0" />
-                <span>Official Pro-Forma RFQ</span>
+                <span>{t('guarantee_3')}</span>
               </div>
             </div>
 
@@ -128,12 +132,12 @@ export const Hero = () => {
           <div className="lg:col-span-5">
             <div className="bg-[#0F172A] border border-[#334155] rounded-2xl p-5 shadow-2xl space-y-4 relative overflow-hidden text-white">
               
-              {/* Slideshow Header */}
+              {/* Slideshow Header Translated */}
               <div className="flex items-center justify-between border-b border-[#334155] pb-3">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#52B5C9]" />
                   <span className="font-bold text-white text-xs uppercase tracking-wider font-display">
-                    Featured Inventory Showcase
+                    {t('featured_inventory_showcase')}
                   </span>
                 </div>
 
@@ -191,9 +195,9 @@ export const Hero = () => {
                       {currentProd.brand || 'DEMOZI'}
                     </span>
 
-                    {/* Stock Status */}
+                    {/* Stock Status Translated */}
                     <span className="absolute top-3 right-3 px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold font-sans">
-                      Ready to Dispatch
+                      {t('ready_to_dispatch')}
                     </span>
                   </div>
 
@@ -210,14 +214,14 @@ export const Hero = () => {
                     </p>
                   </div>
 
-                  {/* Actions Bar */}
+                  {/* Actions Bar Translated */}
                   <div className="pt-2 flex items-center gap-2 font-sans">
                     <button
                       onClick={() => setSelectedProduct(currentProd)}
-                      className="flex-1 py-2.5 rounded-lg bg-[#1E293B] hover:bg-[#334155] text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors border border-[#334155]"
+                      className="flex-1 py-2.5 rounded-lg bg-[#1E293B] hover:bg-[#334155] text-[#52B5C9] hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors border border-[#334155]"
                     >
                       <Eye className="w-4 h-4 text-[#52B5C9]" />
-                      <span>View Specifications</span>
+                      <span>{t('view_specifications')}</span>
                     </button>
 
                     <button
@@ -231,12 +235,12 @@ export const Hero = () => {
                       {isInQuote ? (
                         <>
                           <Check className="w-4 h-4" />
-                          <span>Added to RFQ</span>
+                          <span>{t('added_to_rfq')}</span>
                         </>
                       ) : (
                         <>
                           <Plus className="w-4 h-4" />
-                          <span>+ Add to RFQ</span>
+                          <span>{t('add_to_rfq')}</span>
                         </>
                       )}
                     </button>
