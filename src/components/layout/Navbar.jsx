@@ -73,16 +73,11 @@ export const Navbar = () => {
               }}
             />
             <div className="hidden sm:block">
-              <div className="flex items-center gap-2">
-                <span className="text-lg sm:text-xl font-bold tracking-tight text-white font-display">
-                  DEMOZİ
-                </span>
-                <span className="px-1.5 py-0.5 text-[9px] font-bold bg-[#3A8899] text-white rounded uppercase tracking-wider whitespace-nowrap font-sans">
-                  LTD. ŞTİ.
-                </span>
-              </div>
-              <p className="text-[10px] text-[#94A3B8] font-bold tracking-tight whitespace-nowrap font-sans">
-                DEMOZİ KOZMETİK VE MAKİNA DIŞ TİCARET LİMİTED ŞİRKETİ
+              <span className="text-lg sm:text-xl font-extrabold tracking-tight text-white font-display block leading-none">
+                DEMOZİ
+              </span>
+              <p className="text-[10px] text-[#94A3B8] font-bold tracking-tight whitespace-nowrap font-sans mt-1">
+                KOZMETİK VE MAKİNA DIŞ TİCARET
               </p>
             </div>
           </Link>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
-import { MapPin, Mail, Phone } from 'lucide-react';
+import { MapPin, Mail } from 'lucide-react';
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -17,8 +17,8 @@ export const Footer = () => {
             <div className="flex items-center gap-3">
               <img src="/assets/logo_transparent.png" alt="Demozi Logo" className="h-10 w-auto object-contain" />
               <div>
-                <span className="text-lg font-bold text-white tracking-tight font-display">DEMOZİ</span>
-                <p className="text-[10px] text-[#52B5C9] font-extrabold uppercase font-sans">LTD. ŞTİ.</p>
+                <span className="text-lg font-extrabold text-white tracking-tight font-display block leading-none">DEMOZİ</span>
+                <p className="text-[10px] text-[#52B5C9] font-bold uppercase font-sans mt-1">KOZMETİK VE MAKİNA DIŞ TİCARET</p>
               </div>
             </div>
             <p className="leading-relaxed text-[#CBD5E1]">
