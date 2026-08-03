@@ -7,35 +7,35 @@ export const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-[#0F172A] border-t border-[#334155] text-[#94A3B8] pt-14 pb-10 font-sans">
+    <footer className="bg-[#0F172A] border-t-4 border-[#3A8899] text-[#94A3B8] pt-12 pb-8 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10 text-xs">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 text-xs">
           
           {/* Brand Info */}
           <div className="space-y-3">
-            <Link to="/" className="inline-block">
+            <Link to="/" className="inline-block border border-[#334155] p-2 bg-[#0B131A]">
               <img
                 src="/assets/header_logo.png"
                 alt="DEMOZİ Logo"
-                className="h-12 sm:h-14 w-auto max-w-[280px] object-contain"
+                className="h-10 w-auto max-w-[240px] object-contain"
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = 'assets/header_logo.png';
                 }}
               />
             </Link>
-            <p className="leading-relaxed text-[#CBD5E1] pt-1">
+            <p className="leading-relaxed text-[#CBD5E1] pt-1 font-semibold">
               {t('footer_company_desc')}
             </p>
           </div>
 
           {/* Categories */}
           <div className="space-y-2">
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider font-sans border-b border-[#334155] pb-1.5">
+            <h4 className="text-white font-extrabold text-xs uppercase tracking-wider font-mono border-b-2 border-[#334155] pb-1.5">
               {t('footer_categories')}
             </h4>
-            <ul className="space-y-1.5 text-[#CBD5E1]">
+            <ul className="space-y-1.5 text-[#CBD5E1] font-semibold">
               <li><Link to="/products?category=Cosmetics" className="hover:text-[#52B5C9] transition-colors">Cosmetics & Personal Care</Link></li>
               <li><Link to="/products?category=Industrial Equipment" className="hover:text-[#52B5C9] transition-colors">Machinery Equipment & Hardware</Link></li>
               <li><Link to="/solutions" className="hover:text-[#52B5C9] transition-colors">External Trade & Supply</Link></li>
@@ -45,10 +45,10 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-2">
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider font-sans border-b border-[#334155] pb-1.5">
+            <h4 className="text-white font-extrabold text-xs uppercase tracking-wider font-mono border-b-2 border-[#334155] pb-1.5">
               Quick Links
             </h4>
-            <ul className="space-y-1.5 text-[#CBD5E1]">
+            <ul className="space-y-1.5 text-[#CBD5E1] font-semibold">
               <li><Link to="/" className="hover:text-[#52B5C9] transition-colors">{t('nav_home')}</Link></li>
               <li><Link to="/products" className="hover:text-[#52B5C9] transition-colors">{t('nav_products')}</Link></li>
               <li><Link to="/brands" className="hover:text-[#52B5C9] transition-colors">{t('nav_brands')}</Link></li>
@@ -59,27 +59,27 @@ export const Footer = () => {
 
           {/* Regional Offices */}
           <div className="space-y-2">
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider font-sans border-b border-[#334155] pb-1.5">
+            <h4 className="text-white font-extrabold text-xs uppercase tracking-wider font-mono border-b-2 border-[#334155] pb-1.5">
               {t('footer_offices')}
             </h4>
-            <div className="space-y-2 text-xs text-[#CBD5E1]">
+            <div className="space-y-2 text-xs text-[#CBD5E1] font-semibold">
               <div className="flex gap-2">
                 <MapPin className="w-4 h-4 text-[#52B5C9] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block">{t('hq_title')}</strong>
+                  <strong className="text-white block font-mono uppercase">{t('hq_title')}</strong>
                   <span>{t('hq_addr')}</span>
                 </div>
               </div>
               <div className="flex gap-2">
                 <MapPin className="w-4 h-4 text-[#52B5C9] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block">{t('branch_title')}</strong>
+                  <strong className="text-white block font-mono uppercase">{t('branch_title')}</strong>
                   <span>{t('branch_addr')}</span>
                 </div>
               </div>
               <div className="flex gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#52B5C9] shrink-0 mt-0.5" />
-                <a href="mailto:info@demozi.com" className="hover:text-white">info@demozi.com</a>
+                <a href="mailto:info@demozi.com" className="hover:text-white font-mono">info@demozi.com</a>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 border-t border-[#334155] flex flex-col md:flex-row items-center justify-between text-[11px] text-[#94A3B8] gap-3">
+        <div className="pt-4 border-t border-[#334155] flex flex-col md:flex-row items-center justify-between text-[11px] text-[#94A3B8] gap-3 font-mono">
           <p>{t('rights')}</p>
           <div className="flex gap-4">
             <Link to="/legal" className="hover:text-white transition-colors">Terms of Service</Link>
