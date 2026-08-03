@@ -8,18 +8,18 @@
   color-scheme: light;
 }
 
-/* Industrial 2010 High-Contrast Selection */
+/* Explicit Selection Styling: Text turns crisp Petroleum Blue background with bold white text when highlighted */
 ::selection {
-  background-color: #0F172A !important;
+  background-color: #3A8899 !important;
   color: #FFFFFF !important;
 }
 
 ::-moz-selection {
-  background-color: #0F172A !important;
+  background-color: #3A8899 !important;
   color: #FFFFFF !important;
 }
 
-/* Industrial Standard Basic Web Font Stack */
+/* Standard default basic font stack across the entire website */
 *, ::before, ::after, html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,41 +46,30 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Industrial Sharp Square Rectangular Borders */
-.industrial-border {
-  border: 1px solid #CBD5E1;
-}
-
-.industrial-card {
-  background-color: #FFFFFF;
-  border: 2px solid #0F172A;
-  border-radius: 0px !important;
-}
-
-/* Industrial Sharp Scrollbar */
+/* Clean Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #E2E8F0;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #475569;
-  border-radius: 0px;
+  background: #CBD5E1;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0F172A;
+  background: #3A8899;
 }
 
 /* Fade in animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(2px); }
+  from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.2s ease-out forwards;
+  animation: fadeIn 0.3s ease-out forwards;
 }

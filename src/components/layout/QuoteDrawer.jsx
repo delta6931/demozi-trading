@@ -28,26 +28,26 @@ export const QuoteDrawer = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-black/50 font-sans animate-fadeIn">
-      <div className="w-full max-w-md bg-white border-l-4 border-[#0F172A] h-full flex flex-col justify-between p-6 shadow-2xl overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex justify-end bg-black/40 backdrop-blur-xs animate-fadeIn font-sans">
+      <div className="w-full max-w-md bg-white border-l border-[#E2E8F0] h-full flex flex-col justify-between p-6 shadow-2xl overflow-y-auto">
         
         {/* Header */}
-        <div className="flex items-center justify-between border-b-2 border-[#0F172A] pb-4">
+        <div className="flex items-center justify-between border-b border-[#E2E8F0] pb-4">
           <div className="flex items-center gap-2.5">
             <img
               src="/assets/logo_dark.png"
               alt="Demozi Logo"
-              className="h-6 w-auto object-contain"
+              className="h-7 w-auto object-contain"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = 'assets/logo.png';
               }}
             />
-            <h3 className="font-bold text-[#0F172A] text-base font-display uppercase tracking-tight">{t('rfq_basket_title')}</h3>
+            <h3 className="font-bold text-[#0F172A] text-base font-display">{t('rfq_basket_title')}</h3>
           </div>
           <button
             onClick={() => setIsDrawerOpen(false)}
-            className="p-1.5 bg-[#0F172A] text-white hover:bg-[#1E293B]"
+            className="p-1.5 rounded-lg bg-[#F1F5F9] text-[#64748B] hover:text-[#0F172A]"
           >
             <X className="w-5 h-5" />
           </button>
@@ -55,15 +55,15 @@ export const QuoteDrawer = () => {
 
         {/* Content */}
         {submitted ? (
-          <div className="my-auto p-6 text-center space-y-3 bg-[#0F172A] border-2 border-emerald-500 text-white font-sans">
-            <CheckCircle2 className="w-12 h-12 mx-auto text-emerald-400" />
-            <h4 className="font-extrabold text-lg uppercase font-mono">{t('rfq_sent_success')}</h4>
-            <p className="text-xs text-emerald-300">{t('rfq_sent_desc')}</p>
+          <div className="my-auto p-6 text-center space-y-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800">
+            <CheckCircle2 className="w-12 h-12 mx-auto text-emerald-600" />
+            <h4 className="font-bold text-lg">{t('rfq_sent_success')}</h4>
+            <p className="text-xs text-emerald-700">{t('rfq_sent_desc')}</p>
           </div>
         ) : quoteItems.length === 0 ? (
           <div className="my-auto text-center space-y-3 py-12">
             <ShoppingBag className="w-12 h-12 text-[#94A3B8] mx-auto opacity-40" />
-            <h4 className="font-bold text-[#0F172A] text-base uppercase font-mono">{t('rfq_basket_empty')}</h4>
+            <h4 className="font-bold text-[#0F172A] text-base">{t('rfq_basket_empty')}</h4>
             <p className="text-xs text-[#64748B]">{t('rfq_basket_empty_desc')}</p>
           </div>
         ) : (
@@ -71,25 +71,25 @@ export const QuoteDrawer = () => {
             {quoteItems.map((item) => (
               <div
                 key={item.id}
-                className="p-3 bg-[#F8FAFC] border-2 border-[#0F172A] flex items-center justify-between gap-3 text-xs"
+                className="p-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-between gap-3 text-xs"
               >
                 <div className="flex-1 min-w-0">
                   <span className="text-[10px] font-bold text-[#3A8899] uppercase font-mono">{item.brand || 'PRODUCT'}</span>
-                  <h4 className="font-bold text-[#0F172A] truncate uppercase font-display">{item.name}</h4>
+                  <h4 className="font-bold text-[#0F172A] truncate">{item.name}</h4>
                   <p className="text-[10px] text-[#64748B] font-mono">ID: #{item.id}</p>
                 </div>
 
-                <div className="flex items-center gap-1 bg-white border border-[#0F172A] p-0.5 font-mono">
+                <div className="flex items-center gap-1 bg-white border border-[#CBD5E1] p-1 rounded-lg">
                   <button
                     onClick={() => updateQuantity(item.id, -1)}
-                    className="p-1 hover:bg-[#E2E8F0] text-[#0F172A]"
+                    className="p-1 hover:text-[#3A8899] text-[#0F172A]"
                   >
                     <Minus className="w-3 h-3" />
                   </button>
-                  <span className="font-bold text-[#0F172A] px-1.5">{item.quantity}</span>
+                  <span className="font-bold text-[#0F172A] px-1.5 font-mono">{item.quantity}</span>
                   <button
                     onClick={() => updateQuantity(item.id, 1)}
-                    className="p-1 hover:bg-[#E2E8F0] text-[#0F172A]"
+                    className="p-1 hover:text-[#3A8899] text-[#0F172A]"
                   >
                     <Plus className="w-3 h-3" />
                   </button>
@@ -104,47 +104,47 @@ export const QuoteDrawer = () => {
               </div>
             ))}
 
-            {/* Industrial Form */}
-            <form onSubmit={handleSendRFQ} className="pt-4 border-t-2 border-[#0F172A] space-y-3 text-xs font-sans">
+            {/* Form */}
+            <form onSubmit={handleSendRFQ} className="pt-4 border-t border-[#E2E8F0] space-y-3 text-xs">
               <div>
-                <label className="block text-[#0F172A] font-extrabold uppercase font-mono mb-1">{t('your_name_company')}</label>
+                <label className="block text-[#475569] font-semibold mb-1">{t('your_name_company')}</label>
                 <input
                   type="text"
                   required
                   value={userInfo.name}
                   onChange={(e) => setUserInfo({ ...userInfo, name: e.target.value })}
-                  placeholder="Ahmet Yılmaz / Firma Unvanı"
-                  className="w-full bg-[#F8FAFC] border-2 border-[#0F172A] px-3 py-2 text-[#0F172A] outline-none font-mono"
+                  placeholder="Ahmet Yilmaz"
+                  className="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg px-3 py-2 text-[#0F172A] outline-none focus:border-[#3A8899]"
                 />
               </div>
 
               <div>
-                <label className="block text-[#0F172A] font-extrabold uppercase font-mono mb-1">{t('your_email')}</label>
+                <label className="block text-[#475569] font-semibold mb-1">{t('your_email')}</label>
                 <input
                   type="email"
                   required
                   value={userInfo.email}
                   onChange={(e) => setUserInfo({ ...userInfo, email: e.target.value })}
                   placeholder="name@company.com"
-                  className="w-full bg-[#F8FAFC] border-2 border-[#0F172A] px-3 py-2 text-[#0F172A] outline-none font-mono"
+                  className="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg px-3 py-2 text-[#0F172A] outline-none focus:border-[#3A8899]"
                 />
               </div>
 
               <div>
-                <label className="block text-[#0F172A] font-extrabold uppercase font-mono mb-1">{t('your_phone')}</label>
+                <label className="block text-[#475569] font-semibold mb-1">{t('your_phone')}</label>
                 <input
                   type="text"
                   value={userInfo.phone}
                   onChange={(e) => setUserInfo({ ...userInfo, phone: e.target.value })}
-                  placeholder="+90... / +964..."
-                  className="w-full bg-[#F8FAFC] border-2 border-[#0F172A] px-3 py-2 text-[#0F172A] outline-none font-mono"
+                  placeholder="+90... or +964..."
+                  className="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg px-3 py-2 text-[#0F172A] outline-none focus:border-[#3A8899] font-mono"
                 />
               </div>
 
-              <div className="pt-2 flex flex-col gap-2 font-mono">
+              <div className="pt-2 flex flex-col gap-2">
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#3A8899] hover:bg-[#2B6F7E] text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border-2 border-[#2B6F7E] transition-colors"
+                  className="w-full py-2.5 rounded-xl bg-[#3A8899] hover:bg-[#2B6F7E] text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-sm transition-all"
                 >
                   <Send className="w-4 h-4" />
                   <span>{t('submit_email_rfq')}</span>
@@ -153,7 +153,7 @@ export const QuoteDrawer = () => {
                 <button
                   type="button"
                   onClick={generateWhatsAppMessage}
-                  className="w-full py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border-2 border-emerald-900 transition-colors"
+                  className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all"
                 >
                   <FileText className="w-4 h-4" />
                   <span>{t('send_whatsapp')}</span>
