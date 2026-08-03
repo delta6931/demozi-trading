@@ -57,16 +57,16 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      {/* Main Navbar - Original Compact Height */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Bigger Header Logo Image */}
-          <Link to="/" className="flex items-center shrink-0 group py-1">
+          {/* Logo Fitting Original Header Height */}
+          <Link to="/" className="flex items-center shrink-0 group">
             <img
               src="/assets/header_logo.png"
               alt="DEMOZİ Logo"
-              className="h-12 sm:h-16 w-auto max-w-[280px] sm:max-w-[420px] object-contain transition-transform group-hover:scale-105"
+              className="h-9 sm:h-11 w-auto max-w-[240px] sm:max-w-[320px] object-contain transition-transform group-hover:scale-105"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = 'assets/header_logo.png';
