@@ -40,7 +40,7 @@ export const brandsData = [
     name: "ABB Industrial",
     tagline: "Power & Automation Solutions",
     description: "Leading technology provider in electrification, industrial drives, and robotics. Supply solutions for oil & gas, power generation, and manufacturing.",
-    logo: "assets/logo_transparent.png",
+    logo: "assets/logo_dark.png",
     featured: true,
     category: "Power & Controls"
   },
@@ -49,7 +49,7 @@ export const brandsData = [
     name: "Phoenix Contact",
     tagline: "Industrial Ethernet & Surge Protection",
     description: "Innovative connection technology, signal conditioners, and industrial networking infrastructure for modern smart factories.",
-    logo: "assets/logo_transparent.png",
+    logo: "assets/logo_dark.png",
     featured: true,
     category: "Networking & Interfaces"
   },

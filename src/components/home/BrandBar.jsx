@@ -2,35 +2,36 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { brandsData } from '../../data/brandsData';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Award } from 'lucide-react';
 
 export const BrandBar = () => {
-  const { t } = useLanguage();
-  const featuredBrands = brandsData.filter(b => b.featured);
+  const { t, isRtl } = useLanguage();
+  const featuredBrands = brandsData.slice(0, 6);
 
   return (
-    <section className="py-12 bg-[#F1F5F9] border-b border-[#CBD5E1]">
+    <section className="py-12 bg-[#F8FAFC] border-b border-[#CBD5E1]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-          <div className="flex items-center gap-3">
-            <img src="/assets/logo_transparent.png" alt="Demozi" className="h-8 w-auto" />
-            <div>
-              <div className="text-[#3A8899] text-xs font-extrabold uppercase tracking-wider font-display">
-                {t('global_manufacturers')}
-              </div>
-              <h2 className="text-2xl font-bold text-[#0F172A] tracking-tight font-display">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+          <div>
+            <div className="flex items-center gap-2.5 mb-1">
+              <img src="/assets/logo_dark.png" alt="Demozi" className="h-7 w-auto object-contain" />
+              <span className="px-2.5 py-0.5 rounded bg-[#E2E8F0] border border-[#CBD5E1] text-[#0F172A] text-[10px] font-extrabold font-sans uppercase tracking-wider">
                 {t('direct_brands')}
-              </h2>
+              </span>
             </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#0F172A] font-display">
+              {t('global_manufacturers')}
+            </h2>
           </div>
 
           <Link
             to="/brands"
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#3A8899] hover:underline transition-colors font-sans"
+            className="px-4 py-2 rounded-lg bg-white hover:bg-[#E2E8F0] border border-[#CBD5E1] text-[#0F172A] text-xs font-bold flex items-center gap-2 transition-colors shadow-xs font-sans"
           >
             <span>{t('view_all_brands')}</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className={`w-3.5 h-3.5 text-[#3A8899] ${isRtl ? 'rotate-180' : ''}`} />
           </Link>
         </div>
 
@@ -39,24 +40,25 @@ export const BrandBar = () => {
           {featuredBrands.map((brand) => (
             <Link
               key={brand.id}
-              to={`/products?brand=${encodeURIComponent(brand.id)}`}
-              className="p-4 rounded-xl bg-white border border-[#CBD5E1] hover:border-[#3A8899] flex flex-col items-center justify-center text-center group transition-all duration-200 shadow-sm"
+              to={`/brands?id=${brand.id}`}
+              className="p-4 rounded-xl bg-white border border-[#CBD5E1] hover:border-[#3A8899] flex flex-col items-center justify-center text-center group transition-all duration-200 shadow-xs hover:shadow-md"
             >
-              <div className="w-12 h-12 mb-2 rounded bg-[#F8FAFC] p-2 flex items-center justify-center border border-[#E2E8F0] group-hover:scale-105 transition-transform">
+              <div className="w-full h-16 flex items-center justify-center mb-2 p-1">
                 <img
                   src={brand.logo}
                   alt={brand.name}
-                  className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
+                  className="max-h-full max-w-full object-contain filter group-hover:scale-105 transition-transform"
                   onError={(e) => {
-                    e.target.style.display = 'none';
+                    e.target.onerror = null;
+                    e.target.src = 'assets/logo_dark.png';
                   }}
                 />
               </div>
-              <h3 className="text-xs font-bold text-[#0F172A] group-hover:text-[#3A8899] transition-colors font-sans">
+              <h3 className="text-xs font-bold text-[#0F172A] group-hover:text-[#3A8899] transition-colors font-display line-clamp-1">
                 {brand.name}
               </h3>
-              <span className="text-[10px] text-[#64748B] mt-0.5 line-clamp-1 font-sans">
-                {brand.category}
+              <span className="text-[10px] text-[#64748B] font-sans font-medium line-clamp-1 mt-0.5">
+                {brand.origin || 'Certified Supply'}
               </span>
             </Link>
           ))}

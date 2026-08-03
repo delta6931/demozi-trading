@@ -21,7 +21,6 @@ export const ContactSection = () => {
       : formData.message;
 
     try {
-      // Send directly to info@demozi.com via FormSubmit free endpoint
       await fetch(`https://formsubmit.co/ajax/${companyEmail}`, {
         method: "POST",
         headers: {
@@ -37,7 +36,6 @@ export const ContactSection = () => {
         })
       });
     } catch (err) {
-      // Fallback: mailto link if offline
       const mailtoUrl = `mailto:${companyEmail}?subject=${encodeURIComponent(`DEMOZİ Teklif Talebi - ${formData.name}`)}&body=${encodeURIComponent(`Ad Soyad / Firma: ${formData.name}\nTelefon: ${formData.phone}\nE-posta: ${formData.email}\n\nMesaj / Ürünler:\n${messageText}`)}`;
       window.location.href = mailtoUrl;
     } finally {
@@ -68,7 +66,7 @@ export const ContactSection = () => {
           {/* Left Info Column */}
           <div className="lg:col-span-5 space-y-5">
             <div className="flex items-center gap-2.5">
-              <img src="/assets/logo_transparent.png" alt="" className="h-6 w-auto" />
+              <img src="/assets/logo_dark.png" alt="Demozi" className="h-7 w-auto object-contain" />
               <span className="px-2.5 py-1 rounded bg-[#E2E8F0] border border-[#CBD5E1] text-[#0F172A] text-xs font-extrabold font-sans uppercase tracking-wider shadow-xs">
                 {t('contact_desk_badge')}
               </span>

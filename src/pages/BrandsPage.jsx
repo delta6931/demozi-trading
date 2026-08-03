@@ -40,7 +40,7 @@ export const BrandsPage = () => {
                     className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = 'assets/logo_transparent.png';
+                      e.target.src = 'assets/logo_dark.png';
                     }}
                   />
                 </div>

@@ -94,7 +94,7 @@ export const ProductsPage = () => {
         {/* Header Title with Logo */}
         <div className="max-w-3xl mb-8 space-y-2">
           <div className="flex items-center gap-2.5">
-            <img src="/assets/logo_transparent.png" alt="" className="h-7 w-auto" />
+            <img src="/assets/logo_dark.png" alt="" className="h-7 w-auto object-contain" />
             <span className="px-2.5 py-1 rounded bg-white border border-[#E2E8F0] text-[#3A8899] text-xs font-bold font-sans uppercase tracking-wider shadow-xs">
               {t('catalog_badge')}
             </span>
