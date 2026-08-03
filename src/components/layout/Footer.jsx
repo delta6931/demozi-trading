@@ -1,98 +1,73 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
-import { MapPin, Mail } from 'lucide-react';
 
 export const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-[#0F172A] border-t border-[#334155] text-[#94A3B8] pt-14 pb-10 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-[#0F172A] border-t-2 border-[#1E3A8A] text-[#94A3B8] font-sans text-xs py-6">
+      <div className="max-w-[1024px] mx-auto px-4 space-y-6">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10 text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 pb-4 border-b border-[#334155]">
           
-          {/* Brand Info */}
-          <div className="space-y-3">
-            <Link to="/" className="inline-block">
-              <img
-                src="/assets/header_logo.png"
-                alt="DEMOZİ Logo"
-                className="h-12 sm:h-14 w-auto max-w-[280px] object-contain"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = 'assets/header_logo.png';
-                }}
-              />
-            </Link>
-            <p className="leading-relaxed text-[#CBD5E1] pt-1">
-              {t('footer_company_desc')}
+          <div>
+            <h4 className="text-white font-bold uppercase font-mono text-xs border-b border-[#334155] pb-1 mb-2">
+              ABOUT DEMOZİ
+            </h4>
+            <p className="text-[11px] text-[#CBD5E1] leading-relaxed">
+              DEMOZİ KOZMETİK VE MAKİNA DIŞ TİCARET LİMİTED ŞİRKETİ is an international wholesale trading company.
             </p>
           </div>
 
-          {/* Categories */}
-          <div className="space-y-2">
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider font-sans border-b border-[#334155] pb-1.5">
-              {t('footer_categories')}
+          <div>
+            <h4 className="text-white font-bold uppercase font-mono text-xs border-b border-[#334155] pb-1 mb-2">
+              PRODUCT SECTORS
             </h4>
-            <ul className="space-y-1.5 text-[#CBD5E1]">
-              <li><Link to="/products?category=Cosmetics" className="hover:text-[#52B5C9] transition-colors">Cosmetics & Personal Care</Link></li>
-              <li><Link to="/products?category=Industrial Equipment" className="hover:text-[#52B5C9] transition-colors">Machinery Equipment & Hardware</Link></li>
-              <li><Link to="/solutions" className="hover:text-[#52B5C9] transition-colors">External Trade & Supply</Link></li>
-              <li><Link to="/brands" className="hover:text-[#52B5C9] transition-colors">Global Brands & Partners</Link></li>
+            <ul className="space-y-1 text-[11px] text-[#CBD5E1]">
+              <li><Link to="/products?category=Cosmetics" className="hover:text-white">▸ Cosmetics & Personal Care</Link></li>
+              <li><Link to="/products?category=Industrial Equipment" className="hover:text-white">▸ Machinery & Hardware</Link></li>
+              <li><Link to="/solutions" className="hover:text-white">▸ External Trade & Customs</Link></li>
             </ul>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-2">
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider font-sans border-b border-[#334155] pb-1.5">
-              Quick Links
+          <div>
+            <h4 className="text-white font-bold uppercase font-mono text-xs border-b border-[#334155] pb-1 mb-2">
+              B2B DIRECTORY
             </h4>
-            <ul className="space-y-1.5 text-[#CBD5E1]">
-              <li><Link to="/" className="hover:text-[#52B5C9] transition-colors">{t('nav_home')}</Link></li>
-              <li><Link to="/products" className="hover:text-[#52B5C9] transition-colors">{t('nav_products')}</Link></li>
-              <li><Link to="/brands" className="hover:text-[#52B5C9] transition-colors">{t('nav_brands')}</Link></li>
-              <li><Link to="/solutions" className="hover:text-[#52B5C9] transition-colors">{t('nav_solutions')}</Link></li>
-              <li><Link to="/contact" className="hover:text-[#52B5C9] transition-colors">{t('nav_contact')}</Link></li>
+            <ul className="space-y-1 text-[11px] text-[#CBD5E1]">
+              <li><Link to="/" className="hover:text-white">▸ Home Portal</Link></li>
+              <li><Link to="/products" className="hover:text-white">▸ Full Product Catalog</Link></li>
+              <li><Link to="/brands" className="hover:text-white">▸ Partner Brands</Link></li>
+              <li><Link to="/contact" className="hover:text-white">▸ Request Pro-Forma RFQ</Link></li>
             </ul>
           </div>
 
-          {/* Regional Offices */}
-          <div className="space-y-2">
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider font-sans border-b border-[#334155] pb-1.5">
-              {t('footer_offices')}
+          <div>
+            <h4 className="text-white font-bold uppercase font-mono text-xs border-b border-[#334155] pb-1 mb-2">
+              REGIONAL HQ OFFICES
             </h4>
-            <div className="space-y-2 text-xs text-[#CBD5E1]">
-              <div className="flex gap-2">
-                <MapPin className="w-4 h-4 text-[#52B5C9] shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white block">{t('hq_title')}</strong>
-                  <span>{t('hq_addr')}</span>
-                </div>
+            <div className="text-[11px] text-[#CBD5E1] space-y-1.5 font-mono">
+              <div>
+                <strong className="text-white">Turkey HQ:</strong> Istanbul, Türkiye
               </div>
-              <div className="flex gap-2">
-                <MapPin className="w-4 h-4 text-[#52B5C9] shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white block">{t('branch_title')}</strong>
-                  <span>{t('branch_addr')}</span>
-                </div>
+              <div>
+                <strong className="text-white">Iraq Branch:</strong> Erbil, Iraq
               </div>
-              <div className="flex gap-2">
-                <Mail className="w-3.5 h-3.5 text-[#52B5C9] shrink-0 mt-0.5" />
-                <a href="mailto:info@demozi.com" className="hover:text-white">info@demozi.com</a>
+              <div>
+                <strong className="text-white">Email:</strong> info@demozi.com
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-6 border-t border-[#334155] flex flex-col md:flex-row items-center justify-between text-[11px] text-[#94A3B8] gap-3">
-          <p>{t('rights')}</p>
-          <div className="flex gap-4">
-            <Link to="/legal" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link to="/legal" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/legal" className="hover:text-white transition-colors">Refund Policy</Link>
+        <div className="flex flex-col sm:flex-row items-center justify-between text-[10px] font-mono text-[#94A3B8] gap-2">
+          <p>© 2010-2026 DEMOZİ KOZMETİK VE MAKİNA DIŞ TİCARET LİMİTED ŞİRKETİ. All Rights Reserved.</p>
+          <div className="flex gap-3">
+            <Link to="/legal" className="hover:text-white">Terms of Trade</Link>
+            <Link to="/legal" className="hover:text-white">Privacy Policy</Link>
+            <Link to="/legal" className="hover:text-white">Sitemap</Link>
           </div>
         </div>
 
