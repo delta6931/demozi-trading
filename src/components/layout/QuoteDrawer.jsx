@@ -34,7 +34,15 @@ export const QuoteDrawer = () => {
         {/* Header */}
         <div className="flex items-center justify-between border-b border-[#E2E8F0] pb-4">
           <div className="flex items-center gap-2.5">
-            <img src="/assets/logo_transparent.png" alt="Demozi" className="h-6 w-auto" />
+            <img
+              src="/assets/logo_dark.png"
+              alt="Demozi Logo"
+              className="h-7 w-auto object-contain"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = 'assets/logo.png';
+              }}
+            />
             <h3 className="font-bold text-[#0F172A] text-base font-display">{t('rfq_basket_title')}</h3>
           </div>
           <button
