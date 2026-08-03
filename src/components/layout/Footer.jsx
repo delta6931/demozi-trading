@@ -16,12 +16,12 @@ export const Footer = () => {
           <div className="space-y-3">
             <Link to="/" className="inline-block">
               <img
-                src="/assets/logo_transparent.png"
+                src="/assets/header_logo.png"
                 alt="DEMOZİ Logo"
-                className="h-12 w-auto max-w-[240px] object-contain"
+                className="h-12 sm:h-14 w-auto max-w-[280px] object-contain"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = 'assets/logo.png';
+                  e.target.src = 'assets/header_logo.png';
                 }}
               />
             </Link>
