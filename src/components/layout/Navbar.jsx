@@ -61,25 +61,17 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 shrink-0 group">
+          {/* Logo Image */}
+          <Link to="/" className="flex items-center shrink-0 group">
             <img
               src="/assets/logo_transparent.png"
-              alt="Demozi Logo"
-              className="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105"
+              alt="DEMOZİ Logo"
+              className="h-10 sm:h-12 w-auto max-w-[240px] sm:max-w-[320px] object-contain transition-transform group-hover:scale-105"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = 'assets/logo.png';
               }}
             />
-            <div className="hidden sm:block">
-              <span className="text-lg sm:text-xl font-extrabold tracking-tight text-white font-display block leading-none">
-                DEMOZİ
-              </span>
-              <p className="text-[10px] text-[#94A3B8] font-bold tracking-tight whitespace-nowrap font-sans mt-1">
-                KOZMETİK VE MAKİNA DIŞ TİCARET
-              </p>
-            </div>
           </Link>
 
           {/* Desktop Navigation Links */}

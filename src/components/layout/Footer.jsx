@@ -14,14 +14,18 @@ export const Footer = () => {
           
           {/* Brand Info */}
           <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <img src="/assets/logo_transparent.png" alt="Demozi Logo" className="h-10 w-auto object-contain" />
-              <div>
-                <span className="text-lg font-extrabold text-white tracking-tight font-display block leading-none">DEMOZİ</span>
-                <p className="text-[10px] text-[#52B5C9] font-bold uppercase font-sans mt-1">KOZMETİK VE MAKİNA DIŞ TİCARET</p>
-              </div>
-            </div>
-            <p className="leading-relaxed text-[#CBD5E1]">
+            <Link to="/" className="inline-block">
+              <img
+                src="/assets/logo_transparent.png"
+                alt="DEMOZİ Logo"
+                className="h-12 w-auto max-w-[240px] object-contain"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'assets/logo.png';
+                }}
+              />
+            </Link>
+            <p className="leading-relaxed text-[#CBD5E1] pt-1">
               {t('footer_company_desc')}
             </p>
           </div>
