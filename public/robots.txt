@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Index Reference for Search Engine Crawlers
+Sitemap: https://www.demozi.com/sitemap.xml

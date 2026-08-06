@@ -4,6 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { productsData } from '../data/productsData';
 import { useQuote } from '../context/QuoteContext';
 import { ChevronRight, Award, MessageSquare } from 'lucide-react';
+import { ShippingEstimator } from '../components/home/ShippingEstimator';
 
 export const HomePage = () => {
   const { t } = useLanguage();
@@ -85,7 +86,10 @@ export const HomePage = () => {
             </ul>
           </div>
 
-          {/* Box 2: Quick RFQ Inquiry Box */}
+          {/* Box 2: Interactive Shipping & Customs Estimator Widget */}
+          <ShippingEstimator />
+
+          {/* Box 3: Quick RFQ Inquiry Box */}
           <div className="border border-[#CBD5E1] bg-[#F8FAFC] p-3 space-y-2">
             <div className="border-b border-[#CBD5E1] pb-1">
               <h4 className="font-bold text-[#0F172A] uppercase font-mono text-xs">QUICK PRICE INQUIRY</h4>
@@ -113,7 +117,7 @@ export const HomePage = () => {
             </form>
           </div>
 
-          {/* Box 3: Certified B2B Supplier Card */}
+          {/* Box 4: Certified B2B Supplier Card */}
           <div className="border border-[#CBD5E1] bg-white p-3 space-y-2">
             <div className="flex items-center gap-2 border-b border-[#E2E8F0] pb-1.5">
               <Award className="w-5 h-5 text-amber-600 shrink-0" />
@@ -284,21 +288,21 @@ export const HomePage = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td>2026-08-05</td>
+                  <td>2026-08-06</td>
                   <td><code className="bg-[#E2E8F0] px-1 py-0.5 font-mono text-[10px]">HS 3304.99.00</code></td>
                   <td>Cosmetics Personal Care Wholesale Lot</td>
                   <td>Erbil, Iraq</td>
                   <td><span className="text-emerald-700 font-bold">RFQ Processed</span></td>
                 </tr>
                 <tr>
-                  <td>2026-08-04</td>
+                  <td>2026-08-05</td>
                   <td><code className="bg-[#E2E8F0] px-1 py-0.5 font-mono text-[10px]">HS 8413.70.80</code></td>
                   <td>Industrial Hydraulic Pump & Spare Parts</td>
                   <td>Baghdad, Iraq</td>
                   <td><span className="text-emerald-700 font-bold">Shipped</span></td>
                 </tr>
                 <tr>
-                  <td>2026-08-03</td>
+                  <td>2026-08-04</td>
                   <td><code className="bg-[#E2E8F0] px-1 py-0.5 font-mono text-[10px]">HS 8422.30.00</code></td>
                   <td>Cosmetic Packaging & Bottle Filling Line</td>
                   <td>Istanbul, Turkey</td>
